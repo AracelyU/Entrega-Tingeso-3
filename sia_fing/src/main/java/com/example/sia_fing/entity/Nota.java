@@ -10,14 +10,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Table(name = "plan_estudios")
-public class PlanEstudio {
+@Table(name = "notas")
+public class Nota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    String cod_carr; // relación con carrera
-    String cod_plan;
+    int anio;
+    int semestre;
+    String cod_alumno;
     int nivel;
     String cod_asig;
-    String nom_asig;
+    Float nota;
 }

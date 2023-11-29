@@ -1,7 +1,7 @@
 package com.example.sia_fing.controller;
 
 
-import com.example.sia_fing.service.SubirExcelService;
+import com.example.sia_fing.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,14 +17,103 @@ public class SubirExcelController {
     @Autowired
     private SubirExcelService subirExcelService;
 
-    @PostMapping("/uploadExcel")
-    public ResponseEntity<String> uploadExcel(@RequestParam("file") MultipartFile file) {
+    @Autowired
+    EstudianteService estudianteService;
+
+    @Autowired
+    CarreraService carreraService;
+
+    @Autowired
+    NotaService notaService;
+
+    @Autowired
+    PlanEstudioService planEstudioService;
+
+    @Autowired
+    PrerrequisitoService prerrequisitoService;
+
+    @PostMapping("/uploadEstudiantes")
+    public ResponseEntity<String> uploadEstudiantes(@RequestParam("file") MultipartFile file) {
         try {
-            subirExcelService.leerEstudiantes(file);
-            return ResponseEntity.ok("Archivo leído correctamente");
+            if(estudianteService.obtenerEstudiantes().isEmpty()){
+                subirExcelService.leerEstudiantes(file);
+                return ResponseEntity.ok("Archivo leído correctamente");
+            }else{
+                return ResponseEntity.notFound().build();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(500).body("Error al procesar el archivo: " + e.getMessage());
         }
     }
+
+
+    @PostMapping("/uploadCarreras")
+    public ResponseEntity<String> uploadCarreras(@RequestParam("file") MultipartFile file) {
+        try {
+            if(carreraService.obtenerCarreras().isEmpty()){
+                subirExcelService.leerCarreras(file);
+                return ResponseEntity.ok("Archivo leído correctamente");
+            }else{
+                return ResponseEntity.notFound().build();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Error al procesar el archivo: " + e.getMessage());
+        }
+    }
+
+    @PostMapping("/uploadNotas")
+    public ResponseEntity<String> uploadNotas(@RequestParam("file") MultipartFile file) {
+        try {
+            if(notaService.obtenerNotas().isEmpty()){
+                subirExcelService.leerNotas(file);
+                return ResponseEntity.ok("Archivo leído correctamente");
+            }else{
+                return ResponseEntity.notFound().build();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Error al procesar el archivo: " + e.getMessage());
+        }
+    }
+
+    @PostMapping("/uploadPlanEstudios")
+    public ResponseEntity<String> uploadPlanEstudios(@RequestParam("file") MultipartFile file) {
+        try {
+            if(planEstudioService.obtenerPlanEstudios().isEmpty()){
+                subirExcelService.leerPlanEstudio(file);
+                return ResponseEntity.ok("Archivo leído correctamente");
+            }else{
+                return ResponseEntity.notFound().build();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Error al procesar el archivo: " + e.getMessage());
+        }
+    }
+
+    @PostMapping("/uploadPrerrequisito")
+    public ResponseEntity<String> uploadPrerrequisito(@RequestParam("file") MultipartFile file) {
+        try {
+            if(prerrequisitoService.obtenerPrerrequisitos().isEmpty()){
+                subirExcelService.leerPrerrequisitos(file);
+                return ResponseEntity.ok("Archivo leído correctamente");
+            }else{
+                return ResponseEntity.notFound().build();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Error al procesar el archivo: " + e.getMessage());
+        }
+    }
+
+
+
+
 }

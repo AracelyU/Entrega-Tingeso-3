@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9e30839d-002b-480f-9b97-5abaf3764bea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/sia_fing/src/main/resources/entity/Estudiantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/sia_fing/src/main/resources/entity/Estudiantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sia_frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sia_frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sia_frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sia_frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sia_frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/sia_frontend/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,9 +18,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2YgYh2HM6IB5ZK6Pv33NVkOWqzA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -24,7 +30,13 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -36,7 +48,11 @@
       <option name="presentableId" value="Default" />
       <updated>1700948815686</updated>
       <workItem from="1700948820526" duration="12000" />
+      <workItem from="1701201247398" duration="577000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

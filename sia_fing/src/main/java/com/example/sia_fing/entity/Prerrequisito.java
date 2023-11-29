@@ -7,17 +7,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
-@Table(name = "plan_estudios")
-public class PlanEstudio {
+@Table(name= "prerrequisitos")
+public class Prerrequisito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    String cod_carr; // relación con carrera
-    String cod_plan;
-    int nivel;
     String cod_asig;
-    String nom_asig;
+    String cod_prerreq;
+
 }
