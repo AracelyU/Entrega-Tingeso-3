@@ -17,6 +17,6 @@ public class Carrera {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    String cod_carr;
+    Integer cod_carr;
     String nom_carr;
 }

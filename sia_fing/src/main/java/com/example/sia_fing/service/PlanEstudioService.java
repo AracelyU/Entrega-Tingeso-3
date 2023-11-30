@@ -17,7 +17,8 @@ public class PlanEstudioService {
         return planEstudioRepository.findAll();
     }
 
-    public void guardarPlanEstudio(String cod_carr, String cod_plan, int nivel, String cod_asig, String nom_asig){
+    public void eliminarPlanEstudios(){ planEstudioRepository.deleteAll();}
+    public void guardarPlanEstudio(Integer cod_carr, String cod_plan, Integer nivel, Integer cod_asig, String nom_asig){
         PlanEstudio p = new PlanEstudio();
         p.setCod_carr(cod_carr);
         p.setCod_plan(cod_plan);

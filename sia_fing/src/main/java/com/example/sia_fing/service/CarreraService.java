@@ -19,14 +19,21 @@ public class CarreraService {
         return carreraRepository.findAll();
     }
 
+    // eliminar carreras
+    public void eliminarCarreras(){
+        carreraRepository.deleteAll();;
+    }
+
     /*
     función para guardar una carrera
     */
-    public void guardarCarrera(String cod_carr, String nombre){
+    public void guardarCarrera(Integer cod_carr, String nombre){
         Carrera c = new Carrera();
         c.setCod_carr(cod_carr);
         c.setNom_carr(nombre);
         carreraRepository.save(c);
     }
+
+
 
 }

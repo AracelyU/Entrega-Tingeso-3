@@ -18,7 +18,10 @@ public class PrerrequisitoService {
         return prerrequisitoRepository.findAll();
     }
 
-    public void guardarPrerrequisito(String cod_asig, String cod_prerreq){
+    public void eliminarPrerrequisitos(){
+        prerrequisitoRepository.deleteAll();
+    }
+    public void guardarPrerrequisito(Integer cod_asig, Integer cod_prerreq){
         Prerrequisito p = new Prerrequisito();
         p.setCod_asig(cod_asig);
         p.setCod_prerreq(cod_prerreq);

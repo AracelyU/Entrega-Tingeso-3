@@ -83,11 +83,9 @@ public class SubirExcelService {
                 String nombres = row.getCell(1).getStringCellValue();
                 String apellidos = row.getCell(2).getStringCellValue();
                 String email = row.getCell(3).getStringCellValue(); // <-- Corregido
-                String cod_carr = row.getCell(4).getStringCellValue(); // <-- Corregido
+                Integer cod_carr = (int) row.getCell(4).getNumericCellValue(); // <-- Corregido
 
-                if (!rut.isEmpty() && !nombres.isEmpty() && !apellidos.isEmpty() && !email.isEmpty()) {
-                    estudianteService.guardarEstudiante(rut, nombres, apellidos, email, cod_carr);
-                }
+                estudianteService.guardarEstudiante(rut, nombres, apellidos, email, cod_carr);
             }
         } catch (IOException e) {
             System.out.println("Error al leer el archivo");
@@ -107,12 +105,10 @@ public class SubirExcelService {
             for (int rowIndex = 1; rowIndex < rowCount; rowIndex++) { // Skip the header row
                 Row row = sheet.getRow(rowIndex);
 
-                String cod_carr = row.getCell(0).getStringCellValue();
+                Integer cod_carr = (int) row.getCell(0).getNumericCellValue();
                 String nombre = row.getCell(1).getStringCellValue();
+                carreraService.guardarCarrera(cod_carr, nombre);
 
-                if (!nombre.isEmpty()) {
-                    carreraService.guardarCarrera(cod_carr, nombre);
-                }
             }
         } catch (IOException e) {
             System.out.println("Error al leer el archivo");
@@ -132,15 +128,14 @@ public class SubirExcelService {
             for (int rowIndex = 1; rowIndex < rowCount; rowIndex++) { // Skip the header row
                 Row row = sheet.getRow(rowIndex);
 
-                int anio = (int) row.getCell(0).getNumericCellValue();
-                int semestre = (int) row.getCell(1).getNumericCellValue();
-                String cod_alumno = row.getCell(2).getStringCellValue();
-                int nivel = (int) row.getCell(3).getNumericCellValue(); // <-- Corregido
-                String cod_asig = row.getCell(4).getStringCellValue(); // <-- Corregido
+                Integer anio = (int) row.getCell(0).getNumericCellValue();
+                Integer semestre = (int) row.getCell(1).getNumericCellValue();
+                String rut = row.getCell(2).getStringCellValue();
+                Integer cod_asig = (int) row.getCell(3).getNumericCellValue(); // <-- Corregido
+                double nota = row.getCell(4).getNumericCellValue();
 
-                if (!cod_alumno.isEmpty()){
-                   notaService.guardarNota(anio, semestre, cod_alumno, nivel, cod_asig);
-                }
+                notaService.guardarNota(anio, semestre, rut, cod_asig, nota);
+
             }
         } catch (IOException e) {
             System.out.println("Error al leer el archivo");
@@ -161,15 +156,14 @@ lee el archivo nota.xlsx
             for (int rowIndex = 1; rowIndex < rowCount; rowIndex++) { // Skip the header row
                 Row row = sheet.getRow(rowIndex);
 
-                String cod_carr = row.getCell(0).getStringCellValue();
+                Integer cod_carr = (int) row.getCell(0).getNumericCellValue();
                 String cod_plan = row.getCell(1).getStringCellValue();
-                int nivel = (int) row.getCell(2).getNumericCellValue(); // <-- Corregido
-                String cod_asig = row.getCell(3).getStringCellValue(); // <-- Corregido
+                Integer nivel = (int) row.getCell(2).getNumericCellValue(); // <-- Corregido
+                Integer cod_asig = (int) row.getCell(3).getNumericCellValue(); // <-- Corregido
                 String nom_asig = row.getCell(4).getStringCellValue();
 
-                if (!nom_asig.isEmpty()){
-                    planEstudioService.guardarPlanEstudio(cod_carr, cod_plan, nivel, cod_asig, nom_asig);
-                }
+                planEstudioService.guardarPlanEstudio(cod_carr, cod_plan, nivel, cod_asig, nom_asig);
+
             }
         } catch (IOException e) {
             System.out.println("Error al leer el archivo");
@@ -186,8 +180,8 @@ lee el archivo nota.xlsx
             for (int rowIndex = 1; rowIndex < rowCount; rowIndex++) { // Skip the header row
                 Row row = sheet.getRow(rowIndex);
 
-                String cod_asig = row.getCell(0).getStringCellValue();
-                String cod_prerreq = row.getCell(1).getStringCellValue();
+                Integer cod_asig = (int) row.getCell(0).getNumericCellValue();
+                Integer cod_prerreq = (int) row.getCell(1).getNumericCellValue();
                 prerrequisitoService.guardarPrerrequisito(cod_asig, cod_prerreq);
 
             }

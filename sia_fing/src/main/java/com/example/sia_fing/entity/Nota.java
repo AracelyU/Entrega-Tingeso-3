@@ -15,10 +15,9 @@ public class Nota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    int anio;
-    int semestre;
-    String cod_alumno;
-    int nivel;
-    String cod_asig;
+    Integer anio;
+    Integer semestre;
+    String rut;
+    Integer cod_asig;
     Float nota;
 }

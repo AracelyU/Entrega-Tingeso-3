@@ -20,6 +20,6 @@ public class Estudiante {
     String nombre;
     String apellido;
     String email;
-    String cod_carr;  // relación con carrera
+    Integer cod_carr;
 
 }

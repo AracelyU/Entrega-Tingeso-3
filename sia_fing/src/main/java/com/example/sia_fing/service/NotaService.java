@@ -17,13 +17,14 @@ public class NotaService {
         return notaRepository.findAll();
     }
 
-    public void guardarNota(int anio, int semestre, String cod_alumno, int nivel, String cod_asig){
+    public void eliminarNotas(){ notaRepository.deleteAll();}
+    public void guardarNota(Integer anio, Integer semestre, String rut, Integer cod_asig, double nota){
         Nota n = new Nota();
         n.setAnio(anio);
         n.setSemestre(semestre);
-        n.setCod_alumno(cod_alumno);
-        n.setNivel(nivel);
+        n.setRut(rut);
         n.setCod_asig(cod_asig);
+        n.setNota((float) nota);
         notaRepository.save(n);
     }
 

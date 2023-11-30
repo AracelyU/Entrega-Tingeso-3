@@ -15,7 +15,7 @@ public class Prerrequisito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    String cod_asig;
-    String cod_prerreq;
+    Integer cod_asig;
+    Integer cod_prerreq;
 
 }
