@@ -29,11 +29,17 @@ public class CarreraService {
     */
     public void guardarCarrera(Integer cod_carr, String nombre){
         Carrera c = new Carrera();
-        c.setCod_carr(cod_carr);
+        c.setCodigo_carr(cod_carr);
         c.setNom_carr(nombre);
         carreraRepository.save(c);
     }
 
+    /*
+    obtener la carrera según código
+     */
+    public String nombreCarrera(Integer cod_carr){
+        return carreraRepository.findCarreraByCod_carr(cod_carr);
+    }
 
 
 }

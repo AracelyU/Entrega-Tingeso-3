@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,9 +17,12 @@ public class PlanEstudio {  // ramo
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    Integer cod_carr; // relación con carrera
+    Integer cod_carr;
     String cod_plan;
     Integer nivel;
     Integer cod_asig;
     String nom_asig;
+    Integer cupos = 50;
+
+
 }

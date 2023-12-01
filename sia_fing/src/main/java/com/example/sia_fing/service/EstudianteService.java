@@ -40,11 +40,15 @@ public class EstudianteService {
         estudianteRepository.save(e);
     }
 
+    /*
+    obtener estudiante por su rut
 
-    // obtener estudiante escogido
-    public Estudiante obtenerEstudiantePrincipal(){
-        return estudianteRepository.findEstudianteById(estudiantePrincipal);
+     */
+    public Estudiante obtenerEstudianteRut(String rut){
+        return estudianteRepository.findEstudianteByRut(rut);
     }
+
+
 
     // obtener la información relevante del estudiante escogido siendo esta
     /*
@@ -52,10 +56,10 @@ public class EstudianteService {
         plan que cursa
         cursos que tiene inscritos
         cursos que puede tomar según las condiciones presentadas en el documento
-
-
-
      */
+
+    // obtener el nivel del estudiante
+
 
 
 

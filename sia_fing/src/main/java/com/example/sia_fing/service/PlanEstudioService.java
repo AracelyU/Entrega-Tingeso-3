@@ -1,14 +1,18 @@
 package com.example.sia_fing.service;
 
+import com.example.sia_fing.entity.EstudiantePrincipal;
 import com.example.sia_fing.entity.PlanEstudio;
 import com.example.sia_fing.repository.PlanEstudioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 
 @Service
 public class PlanEstudioService {
+
+    @Autowired
+    EstudiantePrincipalService estudiantePrincipalService;
 
     @Autowired
     PlanEstudioRepository planEstudioRepository;
@@ -27,6 +31,24 @@ public class PlanEstudioService {
         p.setNom_asig(nom_asig);
         planEstudioRepository.save(p);
     }
+
+    /*
+        obtener los ramos del siguiente nivel de estudiante
+     */
+    public List<PlanEstudio> obtenerRamosPosibles(){
+        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        List<PlanEstudio> pe = new ArrayList<>();
+
+
+
+
+
+
+        return pe;
+    }
+
+
+
 
 
 }

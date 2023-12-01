@@ -18,4 +18,6 @@ public class Prerrequisito {
     Integer cod_asig;
     Integer cod_prerreq;
 
+
+
 }

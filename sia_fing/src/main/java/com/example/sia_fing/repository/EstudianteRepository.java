@@ -9,10 +9,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EstudianteRepository extends JpaRepository<Estudiante, Integer> {
 
-    // obtener estudiante por id
-    @Query("SELECT e FROM Estudiante e WHERE e.id =:id")
-    Estudiante findEstudianteById(@Param("id") int id);
+    // obtener el código de carrera del estudiante
+    //@Query("SELECT e.cod_carr FROM Estudiante e WHERE e.rut =:rut")
+    //Integer findCod_carrByRutEstudiante(@Param("rut") String rut);
 
-
+    // obtener estudiante por su rut
+    @Query("SELECT e FROM Estudiante e WHERE e.rut =:rut")
+    Estudiante findEstudianteByRut(@Param("rut") String rut);
 
 }

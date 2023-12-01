@@ -1,6 +1,7 @@
 package com.example.sia_fing.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,5 +22,7 @@ public class Estudiante {
     String apellido;
     String email;
     Integer cod_carr;
+
+
 
 }

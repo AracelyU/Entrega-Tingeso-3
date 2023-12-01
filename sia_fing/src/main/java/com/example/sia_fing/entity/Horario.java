@@ -1,29 +1,23 @@
 package com.example.sia_fing.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
-@Table(name = "carreras")
-
-public class Carrera {
+@Table(name = "horario")
+public class Horario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    Integer codigo_carr;
-    String nom_carr;
-
-
+    String dia;
+    Integer modulo;
+    Integer cod_asig;
 
 }
