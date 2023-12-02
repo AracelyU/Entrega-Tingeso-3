@@ -17,4 +17,7 @@ public interface EstudianteRepository extends JpaRepository<Estudiante, Integer>
     @Query("SELECT e FROM Estudiante e WHERE e.rut =:rut")
     Estudiante findEstudianteByRut(@Param("rut") String rut);
 
+
+
+
 }

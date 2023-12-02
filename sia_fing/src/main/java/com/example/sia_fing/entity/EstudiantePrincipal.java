@@ -22,9 +22,6 @@ public class EstudiantePrincipal {
     String email;
     Integer nivel;
     Integer cod_carr;
-    String nom_asig;
-    Integer anio;
-    Integer semestre;
     String nom_carr;
 
     /*

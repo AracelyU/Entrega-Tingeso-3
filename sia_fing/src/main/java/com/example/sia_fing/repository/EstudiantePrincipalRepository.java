@@ -9,8 +9,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EstudiantePrincipalRepository extends JpaRepository<EstudiantePrincipal, Integer> {
 
-    @Query("Select e FROM EstudiantePrincipal e WHERE e.id = 1")
+    // el estudiante principal es el último registrado
+    @Query("Select e FROM EstudiantePrincipal e WHERE e.id = (select max(id) from EstudiantePrincipal)")
     EstudiantePrincipal obtenerEstudiantePrincipal();
+
 
 
 }

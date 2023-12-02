@@ -30,6 +30,15 @@ public class PlanEstudioService {
         p.setCod_asig(cod_asig);
         p.setNom_asig(nom_asig);
         planEstudioRepository.save(p);
+
+
+    }
+
+    /*
+    obtener el número de ramos posibles por nivel
+     */
+    public Integer obtenerNroRamosNivel(Integer nivel){
+        return planEstudioRepository.nroRamosNivel(nivel);
     }
 
     /*
@@ -38,9 +47,6 @@ public class PlanEstudioService {
     public List<PlanEstudio> obtenerRamosPosibles(){
         EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
         List<PlanEstudio> pe = new ArrayList<>();
-
-
-
 
 
 

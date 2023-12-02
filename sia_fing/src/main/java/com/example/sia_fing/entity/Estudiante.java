@@ -1,6 +1,7 @@
 package com.example.sia_fing.entity;
 
 
+import com.example.sia_fing.service.Curso;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

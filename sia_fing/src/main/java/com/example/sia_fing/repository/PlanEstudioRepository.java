@@ -7,8 +7,24 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface PlanEstudioRepository extends JpaRepository<PlanEstudio, Integer> {
+
+    /*
+    obtener los ramos de una carrera
+     */
+    @Query("SELECT p FROM PlanEstudio p WHERE p.cod_carr =:cod_carr")
+    List<PlanEstudio> findPlanEstudioByCod_carr(@Param("cod_carr") Integer cod_carr);
+
+
+    /*
+    obtener nro de ramos según el nivel
+     */
+    @Query("Select count(*) FROM PlanEstudio p WHERE p.nivel =:nivel")
+    Integer nroRamosNivel(@Param("nivel") Integer nivel);
+
 
 
 

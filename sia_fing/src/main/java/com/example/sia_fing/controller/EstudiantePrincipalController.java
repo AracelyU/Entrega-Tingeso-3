@@ -45,4 +45,14 @@ public class EstudiantePrincipalController {
         return ResponseEntity.ok(ep);
     }
 
+    // ver el estudiante principal
+    @GetMapping("/getEstudiante")
+    public ResponseEntity<EstudiantePrincipal> obtenerEstudiantePrincipal(){
+        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(ep == null){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(ep);
+    }
+
 }
