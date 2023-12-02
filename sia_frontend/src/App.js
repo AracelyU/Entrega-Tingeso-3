@@ -1,18 +1,26 @@
-import {BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
-import Menu from "./component/MenuComponent";
-import Cabeza from "./component/CabezaComponent"
 import React from "react";
+import Navbar from "./component/Navbar"
+import PerfilEstudiante from "./component/PerfilEstudiante";
+import Horario from "./component/HorarioComponent";
+import Inscripcion from "./component/InscriptionComponent";
+import Ayuda from "./component/AyudaComponent";
 
 function App() {
   return (
-      <Router>
-          <div className="flex">
-              <Cabeza />
-              <Menu />
+      <>
 
-          </div>
-      </Router>
+          <BrowserRouter>
+              <Routes>
+                  <Route path= "/" element={< PerfilEstudiante />} />
+                  <Route path="/horario-estudiante" element={< Horario/>} />
+                  <Route path="/inscripcion-estudiante" element={< Inscripcion/>} />
+                  <Route path="/ayuda" element={< Ayuda/>} />
+              </Routes>
+          </BrowserRouter>
+      </>
+
   );
 }
 

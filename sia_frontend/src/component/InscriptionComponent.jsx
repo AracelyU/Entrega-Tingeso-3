@@ -2,15 +2,15 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import { useState } from 'react';
+import Navbar from "./Navbar";
 
 
 export default function InscriptionComponent() {
 
     return(
         <div>
-
-
-            <h2>HOLA</h2>
+            <Navbar />
+            <h2>Sección de inscripción de asignatura</h2>
 
 
         </div>
@@ -18,5 +18,3 @@ export default function InscriptionComponent() {
 
     );
 }
-
-export default InscriptionComponent;
