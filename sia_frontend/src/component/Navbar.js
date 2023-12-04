@@ -32,6 +32,10 @@ const Navbar = () => {
     const navigateInscripcion = (event) => {
         navigate("/inscripcion-estudiante");
     };
+    const navigaInscripcionHorario = (event) => {
+        navigate("/ingresar-horario");
+    };
+
 
     const navigateAyuda = (event) => {
         navigate("/ayuda");
@@ -61,7 +65,7 @@ const Navbar = () => {
                             <MenuItemLink onClick={navigatePerfil}>
                                 <div>
                                     <IoMdPerson />
-                                    PERFIL
+                                    Perfil
                                 </div>
                             </MenuItemLink>
                         </MenuItem>
@@ -70,7 +74,7 @@ const Navbar = () => {
                             <MenuItemLink onClick={navigateHorario}>
                                 <div>
                                     <FaRegCalendarDays />
-                                    MI HORARIO
+                                    Mi horario
                                 </div>
 
                             </MenuItemLink>
@@ -80,7 +84,16 @@ const Navbar = () => {
                             <MenuItemLink onClick={navigateInscripcion}>
                                 <div>
                                     <GiArchiveRegister />
-                                    INSCRIBIR ASIGNATURA
+                                    Inscribir asignatura (2024/01)
+                                </div>
+                            </MenuItemLink>
+                        </MenuItem>
+
+                        <MenuItem>
+                            <MenuItemLink onClick={navigaInscripcionHorario}>
+                                <div>
+                                    <GiArchiveRegister />
+                                    Ingresar horario
                                 </div>
                             </MenuItemLink>
                         </MenuItem>
@@ -89,7 +102,7 @@ const Navbar = () => {
                             <MenuItemLink onClick={navigateAyuda}>
                                 <div>
                                     <IoMdHelpCircleOutline />
-                                    AYUDA
+                                    Ayuda
                                 </div>
                                 </MenuItemLink>
                         </MenuItem>

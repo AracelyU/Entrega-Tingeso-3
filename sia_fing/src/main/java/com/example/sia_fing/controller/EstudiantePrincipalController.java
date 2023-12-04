@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(allowCredentials = "false")
 @RequestMapping("/estudiantePrincipal")
 public class EstudiantePrincipalController {
 

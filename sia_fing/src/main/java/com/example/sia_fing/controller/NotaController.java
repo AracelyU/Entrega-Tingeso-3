@@ -51,7 +51,6 @@ public class NotaController {
         if(ep == null){
             return ResponseEntity.noContent().build();
         }
-
         Integer datos = notaService.numeroRamos(anio, semestre, ep.getRut());
         return ResponseEntity.ok(datos);
     }
@@ -65,9 +64,13 @@ public class NotaController {
         if(ep == null){
             return ResponseEntity.noContent().build();
         }
-        Integer datos = notaService.situacionRepitenciaEstudiante(cod_asig, ep.getRut(), ep.getNivel());
+        Integer datos = notaService.situacionRepitenciaEstudiante(cod_asig, ep.getNivel());
         return ResponseEntity.ok(datos);
     }
+
+
+    // obtener el nro de estudiantes inscritos en un curso
+
 
 
 

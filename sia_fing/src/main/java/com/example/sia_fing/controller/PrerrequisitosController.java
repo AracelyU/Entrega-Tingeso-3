@@ -40,17 +40,10 @@ public class PrerrequisitosController {
     }
 
 
-    /*
-    verificar si cumple todos los requisitos para un ramo
-     */
-    @GetMapping("/verifityPrerrequisito/{cod_asig}")
-    public ResponseEntity<Integer> verificarPrerrequisito(@PathVariable("cod_asig") Integer cod_asig){
-        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
-        if(ep == null){
-            return ResponseEntity.noContent().build();
-        }
-        Integer res = prerrequisitoService.verificarPrerrequisitos(cod_asig, ep.getRut());
-        return ResponseEntity.ok(res);
-    }
+
+
+
+
+
 
 }

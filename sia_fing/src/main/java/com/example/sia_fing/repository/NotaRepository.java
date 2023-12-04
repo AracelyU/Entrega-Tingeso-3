@@ -42,4 +42,14 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
         @Query("SELECT COUNT(*) FROM Nota n WHERE n.rut =:rut AND n.cod_asig =:cod_asig")
         Integer nroVecesQueDioUnRamo(@Param("rut") String rut, @Param("cod_asig") Integer cod_asig);
 
+
+        /*
+        obtener los codigos de los ramos inscritos de un estudiante por año y semestre señalado
+
+         */
+        @Query("SELECT n.cod_asig FROM Nota n WHERE n.rut=:rut AND n.anio=:anio AND n.semestre=:semestre")
+        List<Integer> RamosAnioSemestre(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
+
+
+
 }

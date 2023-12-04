@@ -18,16 +18,15 @@ public class NotaService {
     @Autowired
     EstudiantePrincipalService estudiantePrincipalService;
 
-    @Autowired
-    PlanEstudioService planEstudioService;
-
 
     public List<Nota> obtenerNotas(){
         return notaRepository.findAll();
     }
 
     public void eliminarNotas(){ notaRepository.deleteAll();}
-    public void guardarNota(Integer anio, Integer semestre, String rut, Integer cod_asig, double nota){
+
+    // recuerda que hay un atributo sección para más tarde
+    public Nota guardarNota(Integer anio, Integer semestre, String rut, Integer cod_asig, double nota){
         Nota n = new Nota();
         n.setAnio(anio);
         n.setSemestre(semestre);
@@ -35,13 +34,18 @@ public class NotaService {
         n.setCod_asig(cod_asig);
         n.setNota((float) nota);
         notaRepository.save(n);
+        return n;
     }
 
     /*
-    determinar nuevo año academico con anio y semestre (a la hora de ingresar el ramo al estudiante -> inscribir ramo como un objeto nota pero con nota vacio)
+    determinar nuevo año academico con anio y semestre (a la hora de ingresar el ramo al estudiante -> inscribir ramo como un objeto nota pero con nota vacio 0 -1)
      */
     public List<Integer> newAgeAcademy(){
         EstudiantePrincipal e = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(e == null){
+            return null;
+        }
+
         List<Integer> datos = notaRepository.newAgeAcademy(e.getRut());
         Integer anio = datos.get(0);
         Integer semestre = datos.get(1);
@@ -62,43 +66,27 @@ public class NotaService {
 
 
     /*
-    obtener nota de un ramo según su código de asignatura
+    obtener nota de un ramo según su código de asignatura (ayuda a verificar si cumple prerrequisitos)
      */
-    public Float obtenerNotaDeRamo(Integer cod_asig, String rut){
-        return notaRepository.NotaByCod_asig(cod_asig, rut);
+    public Float obtenerNotaDeRamo(Integer cod_asig){
+        EstudiantePrincipal e = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(e == null){
+            return null;
+        }
+        return notaRepository.NotaByCod_asig(cod_asig, e.getRut());
     }
 
-    /*
-     cuantos ramos tiene el estudiante según anio y semestre y estar al tanto de su situación de carrera
-
-     verificar que curse al menos 3 asignaturas de su plan para permanecer en la carrera
-     */
-    public Integer numeroRamos(Integer anio, Integer semestre, String rut){
-        Integer nro_ramos = notaRepository.numeroRamos(anio, semestre, rut);  // puede ser 0 o la cantidad de ramos
-        if(nro_ramos < 3){
-            return 0; // en peligro de no permanecer en su carrera
-        }
-
-        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
-        if(ep == null){
-            return -1; // no hay estudiante registrado
-        }
-
-        Integer nro_ramos_max = planEstudioService.obtenerNroRamosNivel(ep.getNivel());
-
-        if(nro_ramos > nro_ramos_max){
-            return 2; // alcanzó el limite de ramos por inscribir
-        }
-
-        return 1; // su situación es estable
-    }
 
 
     /*
     ver la situación de repitencia de un estudiante
      */
-    public Integer situacionRepitenciaEstudiante(Integer cod_asig, String rut, Integer nivel){
-        Integer nro_intentos = notaRepository.nroVecesQueDioUnRamo(rut, cod_asig);
+    public Integer situacionRepitenciaEstudiante(Integer cod_asig, Integer nivel){
+        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(ep == null){
+            return -1; // no hay estudiante registrado
+        }
+        Integer nro_intentos = notaRepository.nroVecesQueDioUnRamo(ep.getRut(), cod_asig);
 
         if(nro_intentos <= 2){
             return 1; // puede inscribir el ramo
@@ -111,13 +99,22 @@ public class NotaService {
         return 0; // reprobación de la asignatura
     }
 
-
-
-
-
     /*
-
+    obtiene los codigos de las asignaturas que esta dando el estudiante
      */
+    public List<Integer> ramosAnioSemestre(Integer anio, Integer semestre){
+        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(ep == null){
+            return null; // no hay estudiante registrado
+        }
+        return notaRepository.RamosAnioSemestre(anio, semestre, ep.getRut());
+    }
+
+
+    // función de numeroRamos
+    public Integer numeroRamos(Integer anio, Integer semestre, String rut){
+        return notaRepository.numeroRamos(anio, semestre, rut);
+    }
 
 
 

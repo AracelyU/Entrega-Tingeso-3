@@ -50,20 +50,6 @@ public class EstudianteService {
 
 
 
-    // obtener la información relevante del estudiante escogido siendo esta
-    /*
-        nivel del alumno
-        plan que cursa
-        cursos que tiene inscritos
-        cursos que puede tomar según las condiciones presentadas en el documento
-     */
-
-    // obtener el nivel del estudiante
-
-
-
-
-
 
 
 

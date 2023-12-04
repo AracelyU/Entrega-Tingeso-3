@@ -18,6 +18,6 @@ public class Horario {
     int id;
     String dia;
     Integer modulo;
-    Integer cod_asig;
+    Integer cod_asig; // una asignatura se enlaza a un horario
 
 }

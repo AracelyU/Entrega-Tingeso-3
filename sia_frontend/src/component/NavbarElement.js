@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
   margin: auto;
 
 `;
+
 export const LogoContainer = styled.div`
   margin-left: 0.5rem;
   display: flex;

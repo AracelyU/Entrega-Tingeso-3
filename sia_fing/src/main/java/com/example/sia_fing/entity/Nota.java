@@ -20,4 +20,5 @@ public class Nota {
     String rut;
     Integer cod_asig;
     Float nota;
+    String seccion;
 }
