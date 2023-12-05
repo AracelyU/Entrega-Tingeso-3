@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin(allowCredentials = "false")
 @RequestMapping("/ramo")
 public class PlanEstudioController {
 

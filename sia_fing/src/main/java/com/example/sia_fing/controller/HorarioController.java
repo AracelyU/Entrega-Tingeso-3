@@ -13,6 +13,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 @RestController
+@CrossOrigin(allowCredentials = "false")
 @RequestMapping("/horario")
 public class HorarioController {
 

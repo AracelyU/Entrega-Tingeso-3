@@ -110,8 +110,9 @@ verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un 
         for(Integer c : codigos_prerrequisitos){
             // verificar si la nota de cada prerrequisitos existe y es mayor a 4
             Float nota = notaService.obtenerNotaDeRamo(c);
-            System.out.println("nota de asignatura: " + c + " tiene una nota: " + nota);
+
             if(nota == null){
+                //System.out.println("asignatura: " + c + " tiene una nota: " + nota);
                 return -1; // no esta registrado a ese ramo
             }
 

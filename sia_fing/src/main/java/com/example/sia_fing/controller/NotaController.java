@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(allowCredentials = "false")
 @RequestMapping("/nota")
 public class NotaController {
 

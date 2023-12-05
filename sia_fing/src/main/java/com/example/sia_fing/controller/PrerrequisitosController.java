@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(allowCredentials = "false")
 @RequestMapping("/prerrequisito")
 public class PrerrequisitosController {
 

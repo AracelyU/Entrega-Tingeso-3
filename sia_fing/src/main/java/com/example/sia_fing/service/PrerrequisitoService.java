@@ -34,8 +34,8 @@ public class PrerrequisitoService {
     }
 
     // verificar requisitos
-    public List<Integer> obtenerPrerrequisitos(Integer cod_carr){
-        return prerrequisitoRepository.findPrerrequisitoByCod_carr(cod_carr);
+    public List<Integer> obtenerPrerrequisitos(Integer cod_asig){
+        return prerrequisitoRepository.findPrerrequisitoByCod_asig(cod_asig);
     }
 
 

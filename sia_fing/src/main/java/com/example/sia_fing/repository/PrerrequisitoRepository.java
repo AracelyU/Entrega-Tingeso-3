@@ -15,7 +15,7 @@ public interface PrerrequisitoRepository extends JpaRepository<Prerrequisito, In
     obtener los prerrequisitos de un ramo
      */
     @Query("SELECT p.cod_prerreq FROM Prerrequisito p WHERE p.cod_asig =:cod_asig")
-    List<Integer> findPrerrequisitoByCod_carr(@Param("cod_asig") Integer cod_asig);
+    List<Integer> findPrerrequisitoByCod_asig(@Param("cod_asig") Integer cod_asig);
 
 
 
