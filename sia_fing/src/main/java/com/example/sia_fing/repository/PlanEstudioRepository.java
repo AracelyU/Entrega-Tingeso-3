@@ -25,6 +25,10 @@ public interface PlanEstudioRepository extends JpaRepository<PlanEstudio, Intege
     @Query("Select count(*) FROM PlanEstudio p WHERE p.nivel =:nivel")
     Integer nroRamosNivel(@Param("nivel") Integer nivel);
 
+    // obtener ramo según cod_asig
+    @Query("Select p.cupos FROM PlanEstudio p WHERE p.cod_asig =:cod_asig")
+    Integer obtenerCupos(@Param("cod_asig") Integer cod_asig);
+
 
 
 

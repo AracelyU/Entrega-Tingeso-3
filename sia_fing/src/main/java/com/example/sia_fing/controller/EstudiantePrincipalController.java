@@ -18,7 +18,7 @@ public class EstudiantePrincipalController {
     @Autowired
     EstudiantePrincipalService estudiantePrincipalService;
 
-    // ingresar estudiante
+    // mostrar todos los estudiantes principales que fueron ingresados
     @GetMapping("/getAll")
     public ResponseEntity<List<EstudiantePrincipal>> obtenerEstudiantes(){
         List<EstudiantePrincipal> e = estudiantePrincipalService.obtenerEstudiante();
@@ -28,7 +28,7 @@ public class EstudiantePrincipalController {
         return ResponseEntity.ok(e);
     }
 
-    // eliminar estudiante
+    // eliminar estudiantes
     @PostMapping("/deleteAll")
     public ResponseEntity<List<EstudiantePrincipal>> eliminarEstudiantes(){
         estudiantePrincipalService.eliminarEstudiante();
@@ -36,7 +36,7 @@ public class EstudiantePrincipalController {
         return ResponseEntity.ok(e);
     }
 
-    // agregar un estudiante
+    // agregar un estudiante principal según su rut
     @PostMapping("/create/{rut}")
     public ResponseEntity<EstudiantePrincipal> crearEstudiantePrincipal(@PathVariable("rut") String rut){
         EstudiantePrincipal ep = estudiantePrincipalService.crearEstudiantePrincipal(rut);
@@ -46,7 +46,7 @@ public class EstudiantePrincipalController {
         return ResponseEntity.ok(ep);
     }
 
-    // ver el estudiante principal
+    // obtener el último estudiante principal
     @GetMapping("/getEstudiante")
     public ResponseEntity<EstudiantePrincipal> obtenerEstudiantePrincipal(){
         EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();

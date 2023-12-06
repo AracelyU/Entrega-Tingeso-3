@@ -116,7 +116,15 @@ public class NotaService {
         return notaRepository.numeroRamos(anio, semestre, rut);
     }
 
+    // guardar inscribir ramo
+    public Nota guardarNota(Nota n){
+        return notaRepository.save(n);
+    }
 
+    // contar cuantos alumnos de la sección, anio y semestre estan inscritos
+    public Integer nroInscritos(Integer cod_asig, Integer anio, Integer semestre, String seccion){
+        return notaRepository.nroInscritos(anio, semestre, seccion, cod_asig);
+    }
 
 
 }

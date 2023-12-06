@@ -1,565 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c2e95efd-8b6d-4efd-8ef5-cfb53d746400" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/loose-envify" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/loose-envify.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/loose-envify.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/nanoid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/nanoid.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/nanoid.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/.package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/declarations/src/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/declarations/types/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.d.mts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.d.mts.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.d.ts.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.default.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.default.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.dev.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.js.flow" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.prod.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.esm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/src/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/src/props.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/is-prop-valid/types/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/declarations/src/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/declarations/types/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.d.mts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.d.mts.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.d.ts.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.default.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.default.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.dev.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.js.flow" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.prod.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/dist/emotion-memoize.esm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/src/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/memoize/types/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/declarations/src/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.cjs.d.mts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.cjs.d.mts.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.cjs.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.cjs.d.ts.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.cjs.default.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.cjs.default.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.cjs.dev.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.cjs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.cjs.js.flow" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.cjs.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.cjs.prod.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/dist/emotion-unitless.esm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/src/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@emotion/unitless/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@types/stylis/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@types/stylis/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@types/stylis/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/@types/stylis/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/camelize/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/camelize/.github/FUNDING.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/camelize/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/camelize/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/camelize/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/camelize/example/camel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/camelize/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/camelize/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/camelize/test/camel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-color-keywords/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-color-keywords/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-color-keywords/colors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-color-keywords/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-color-keywords/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/TokenStream.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/aspectRatio.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/border.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/borderColor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/boxModel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/boxShadow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/colors.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/flex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/flexFlow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/font.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/fontFamily.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/fontVariant.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/fontWeight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/placeContent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/shadowOffsets.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/textDecoration.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/textDecorationLine.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/textShadow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/transform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/__tests__/units.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/devPropertiesWithoutUnitsRegExp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/tokenTypes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/aspectRatio.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/border.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/boxShadow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/flex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/flexFlow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/font.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/fontFamily.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/fontVariant.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/placeContent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/textDecoration.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/textDecorationLine.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/textShadow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/transform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/css-to-react-native/src/transforms/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/csstype/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/csstype/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/csstype/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/csstype/index.js.flow" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/csstype/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/js-tokens/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/js-tokens/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/js-tokens/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/js-tokens/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/js-tokens/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/loose-envify/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/loose-envify/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/loose-envify/cli.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/loose-envify/custom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/loose-envify/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/loose-envify/loose-envify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/loose-envify/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/loose-envify/replace.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.browser.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.native.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/bin/nanoid.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.browser.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.d.cts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/nanoid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/non-secure/index.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/non-secure/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/non-secure/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/non-secure/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/url-alphabet/index.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/url-alphabet/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/url-alphabet/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/picocolors.browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/picocolors.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/picocolors.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss-value-parser/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss-value-parser/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss-value-parser/lib/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss-value-parser/lib/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss-value-parser/lib/parse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss-value-parser/lib/stringify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss-value-parser/lib/unit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss-value-parser/lib/walk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss-value-parser/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/at-rule.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/at-rule.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/comment.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/comment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/container.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/container.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/css-syntax-error.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/css-syntax-error.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/declaration.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/declaration.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/document.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/document.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/fromJSON.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/fromJSON.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/input.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/lazy-result.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/lazy-result.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/list.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/map-generator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/no-work-result.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/no-work-result.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/node.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/node.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/parse.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/parse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/parser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/postcss.d.mts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/postcss.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/postcss.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/postcss.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/previous-map.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/previous-map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/processor.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/processor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/result.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/result.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/root.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/root.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/rule.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/rule.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/stringifier.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/stringifier.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/stringify.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/stringify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/symbols.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/terminal-highlight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/tokenize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/warn-once.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/warning.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/warning.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom-server-legacy.browser.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom-server-legacy.node.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom-server.browser.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom-server.browser.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom-server.node.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom-server.node.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom-test-utils.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom-test-utils.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/cjs/react-dom.profiling.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/client.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/profiling.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/server.browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/server.node.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/test-utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/umd/react-dom-server-legacy.browser.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/umd/react-dom-server-legacy.browser.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/umd/react-dom-server.browser.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/umd/react-dom-server.browser.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/umd/react-dom-test-utils.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/umd/react-dom-test-utils.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/umd/react-dom.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/umd/react-dom.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react-dom/umd/react-dom.profiling.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/cjs/react-jsx-dev-runtime.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/cjs/react-jsx-dev-runtime.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/cjs/react-jsx-dev-runtime.profiling.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/cjs/react-jsx-runtime.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/cjs/react-jsx-runtime.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/cjs/react-jsx-runtime.profiling.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/cjs/react.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/cjs/react.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/cjs/react.shared-subset.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/cjs/react.shared-subset.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/jsx-dev-runtime.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/jsx-runtime.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/react.shared-subset.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/umd/react.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/umd/react.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/react/umd/react.profiling.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/cjs/scheduler-unstable_mock.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/cjs/scheduler-unstable_mock.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/cjs/scheduler-unstable_post_task.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/cjs/scheduler-unstable_post_task.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/cjs/scheduler.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/cjs/scheduler.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/umd/scheduler-unstable_mock.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/umd/scheduler-unstable_mock.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/umd/scheduler.development.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/umd/scheduler.production.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/umd/scheduler.profiling.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/unstable_mock.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/scheduler/unstable_post_task.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/shallowequal/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/shallowequal/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/shallowequal/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/shallowequal/index.js.flow" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/shallowequal/index.original.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/shallowequal/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/array-set.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/base64-vlq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/base64.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/binary-search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/mapping-list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/quick-sort.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/source-map-consumer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/source-map-generator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/source-node.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/source-map.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/source-map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/base.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/constants.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/constructors/constructWithOptions.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/constructors/createGlobalStyle.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/constructors/css.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/constructors/keyframes.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/constructors/styled.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/hoc/withTheme.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/hoc/withTheme.spec.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/index-standalone.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/models/ComponentStyle.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/models/GlobalStyle.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/models/InlineStyle.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/models/Keyframes.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/models/ServerStyleSheet.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/models/StyleSheetManager.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/models/StyledComponent.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/models/StyledNativeComponent.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/models/ThemeProvider.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/native/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/secretInternals.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/sheet/GroupIDAllocator.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/sheet/GroupedTag.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/sheet/Rehydration.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/sheet/Sheet.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/sheet/Tag.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/sheet/dom.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/sheet/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/sheet/types.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.browser.cjs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.browser.cjs.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.browser.esm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.browser.esm.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.cjs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.cjs.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.esm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.esm.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/styled-components.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/test/globals.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/test/utils.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/test/veryLargeUnionType.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/types.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/addUnitIfNeeded.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/checkDynamicCreation.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/createWarnTooManyClasses.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/determineTheme.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/domElements.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/empties.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/error.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/errors.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/escape.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/flatten.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/generateAlphabeticName.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/generateComponentId.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/generateDisplayName.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/getComponentName.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/hash.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/hoist.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/hyphenateStyleName.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/interleave.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/isFunction.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/isPlainObject.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/isStatelessFunction.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/isStaticRules.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/isStyledComponent.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/isTag.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/joinStrings.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/mixinDeep.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/nonce.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/setToString.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/dist/utils/stylis.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/base.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/constants.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/constructors/constructWithOptions.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/constructors/createGlobalStyle.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/constructors/css.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/constructors/keyframes.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/constructors/styled.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/hoc/withTheme.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/hoc/withTheme.spec.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/index-standalone.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/macro/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/models/ComponentStyle.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/models/GlobalStyle.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/models/InlineStyle.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/models/Keyframes.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/models/ServerStyleSheet.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/models/StyleSheetManager.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/models/StyledComponent.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/models/StyledNativeComponent.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/models/ThemeProvider.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/native/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/secretInternals.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/sheet/GroupIDAllocator.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/sheet/GroupedTag.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/sheet/Rehydration.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/sheet/Sheet.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/sheet/Tag.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/sheet/dom.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/sheet/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/sheet/types.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/styled-components.native.cjs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/styled-components.native.cjs.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/styled-components.native.esm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/styled-components.native.esm.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/test/globals.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/test/utils.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/test/veryLargeUnionType.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/types.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/addUnitIfNeeded.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/checkDynamicCreation.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/createWarnTooManyClasses.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/determineTheme.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/domElements.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/empties.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/error.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/errors.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/escape.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/flatten.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/generateAlphabeticName.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/generateComponentId.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/generateDisplayName.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/getComponentName.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/hash.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/hoist.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/hyphenateStyleName.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/interleave.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/isFunction.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/isPlainObject.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/isStatelessFunction.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/isStaticRules.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/isStyledComponent.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/isTag.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/joinStrings.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/mixinDeep.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/nonce.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/setToString.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/dist/utils/stylis.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/native/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/test-utils/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/styled-components/test-utils/setupTestFramework.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/dist/stylis.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/dist/stylis.mjs.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/dist/umd/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/dist/umd/stylis.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/dist/umd/stylis.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/src/Enum.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/src/Middleware.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/src/Parser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/src/Prefixer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/src/Serializer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/src/Tokenizer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/stylis/src/Utility.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/CopyrightNotice.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/SECURITY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/modules/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/modules/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/modules/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/tslib.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/tslib.es6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/tslib.es6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/tslib.es6.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/tslib.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/tslib/tslib.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/EstudianteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/EstudianteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/EstudiantePrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/EstudiantePrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/HorarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/HorarioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/entity/Horario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/entity/Horario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/HorarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/HorarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/NotaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/NotaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/HorarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/HorarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/NotaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/NotaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/PlanEstudioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/PlanEstudioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/src/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/src/setupTests.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/AyudaComponent.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/HorarioComponent.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/HorarioElement.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/InscriptionComponent.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/InscriptionHorario.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Navbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/NavbarElement.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/PerfilEstudiante.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/fetchData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/useFetch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -572,10 +31,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2Z8eFT8hdM4noGcGHaWIqzU25LM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -585,8 +44,15 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/arace/Documents/GitHub/Entrega-Tingeso-3/sia_frontend"
+    "last_opened_file_path": "C:/Users/arace/Documents/GitHub/Entrega-Tingeso-3/sia_fing",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -597,7 +63,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701808029971</updated>
+      <workItem from="1701820001028" duration="1643000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

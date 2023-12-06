@@ -51,5 +51,9 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
         List<Integer> RamosAnioSemestre(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
 
 
+        // contar cuantos alumno hay por anio, semestre y seccion de una asignatura
+        @Query("SELECT count(*) FROM Nota n WHERE n.seccion =:seccion AND n.anio=:anio AND n.semestre=:semestre AND n.cod_asig =:cod_asig")
+        Integer nroInscritos(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("seccion") String seccion, @Param("cod_asig") Integer cod_asig);
+
 
 }

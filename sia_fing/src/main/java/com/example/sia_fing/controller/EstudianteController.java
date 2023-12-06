@@ -28,7 +28,7 @@ public class EstudianteController {
         return ResponseEntity.ok(e);
     }
 
-    // eliminar carreras
+    // eliminar estudiantes
     @PostMapping("/deleteAll")
     public ResponseEntity<List<Estudiante>> eliminarEstudiantes(){
         estudianteService.eliminarEstudiantes();

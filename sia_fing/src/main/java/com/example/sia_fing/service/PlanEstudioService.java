@@ -1,6 +1,7 @@
 package com.example.sia_fing.service;
 
 import com.example.sia_fing.entity.EstudiantePrincipal;
+import com.example.sia_fing.entity.Nota;
 import com.example.sia_fing.entity.PlanEstudio;
 import com.example.sia_fing.repository.PlanEstudioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -121,6 +122,35 @@ verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un 
             }
         }
         return 1; // cumple todos los requisitos
+    }
+
+
+    // inscribir un alumno a un ramo
+    public Nota inscribirRamo(String seccion, Integer cod_asig, Integer anio, Integer semestre){
+        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(ep == null){
+            return null;
+        }
+
+        // verificar si es puede inscribir por cupos
+        Integer nroInscritos = notaService.nroInscritos(cod_asig, anio, semestre, seccion);
+        Integer cupos = planEstudioRepository.obtenerCupos(cod_asig);
+
+        if(nroInscritos > 50){
+            return null; // se genera sobrecupo
+        }
+
+        // verificar si cumple los requisitos para tomar el ramo (esto ya debería de haberse comprobado en el frontend)
+
+        Nota inscribir = new Nota();
+        inscribir.setAnio(anio);
+        inscribir.setSemestre(semestre);
+        inscribir.setRut(ep.getRut());
+        inscribir.setNota(null);
+        inscribir.setSeccion(seccion);
+        inscribir.setCod_asig(cod_asig);
+        notaService.guardarNota(inscribir);
+        return inscribir;
     }
 
 

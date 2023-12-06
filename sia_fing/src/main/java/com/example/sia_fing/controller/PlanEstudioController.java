@@ -7,6 +7,7 @@ import com.example.sia_fing.entity.PlanEstudio;
 import com.example.sia_fing.service.EstudiantePrincipalService;
 import com.example.sia_fing.service.NotaService;
 import com.example.sia_fing.service.PlanEstudioService;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
@@ -85,14 +86,23 @@ public class PlanEstudioController {
 
     // para inscribir un ramo
     // esto para el momento que hayas escogido sección
-    @PostMapping("/inscribirRamo/{cod_asig}/{seccion}")
-    public ResponseEntity<String> inscribirRamo(@PathVariable("cod_asig") Integer cod_asig, @PathVariable("seccion") String seccion){
+    @PostMapping("/inscribirRamo/{cod_asig}/{seccion}/{anio}/{semestre}")
+    public ResponseEntity<Nota> inscribirRamo(@PathVariable("cod_asig") Integer cod_asig,
+                                                @PathVariable("seccion") String seccion,
+                                                @PathVariable("anio") Integer anio,
+                                                @PathVariable("semestre") Integer semestre){
 
-        return ResponseEntity.ok("se ha hecho");
+        Nota n = planEstudioService.inscribirRamo(seccion, cod_asig, anio, semestre);
+        System.out.println("se ingreso el ramo correctamente");
+
+        if(n == null){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(n);
     }
 
     /*
-verificar si cumple todos los requisitos para un ramo
+verificar si el ramo cumple todos los requisitos para tomarlo
  */
     @GetMapping("/verifityPrerrequisito/{cod_asig}")
     public ResponseEntity<Integer> verificarPrerrequisito(@PathVariable("cod_asig") Integer cod_asig){
