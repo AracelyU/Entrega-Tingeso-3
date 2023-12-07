@@ -72,6 +72,36 @@ public class PlanEstudioService {
         return ramosInscribir;
     }
 
+    /*
+verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un ramo)
+*/
+    public Integer verificarPrerrequisitos(Integer cod_asig){
+        // obtener los prerrequisitos de una carrera
+        List<Integer> codigos_prerrequisitos = prerrequisitoService.obtenerPrerrequisitos(cod_asig);
+        if(codigos_prerrequisitos.isEmpty()){
+            System.out.println("No hay prerrequisitos para este ramo: " + cod_asig);
+            return -2; // no se encontraron prerrequisitos para este ramo
+        }
+
+        for(Integer c : codigos_prerrequisitos){
+            // verificar si la nota de cada prerrequisitos existe y es mayor a 4
+            Float nota = notaService.obtenerNotaDeRamo(c);
+
+            if(nota == null){
+                System.out.println("No esta registrado a ese ramo: " + cod_asig);
+                return -1; // no esta registrado a ese ramo
+            }
+
+            if(nota < 4){
+                System.out.println("No paso este ramo: " + cod_asig);
+                return 0; // no paso el ramo
+            }
+        }
+        System.out.println("cumple con todos los prerrequisitos: " + cod_asig);
+        return 1; // cumple todos los requisitos
+    }
+
+
 
     /*
  cuantos ramos tiene el estudiante según anio y semestre y estar al tanto de su situación de carrera
@@ -98,31 +128,6 @@ public class PlanEstudioService {
     }
 
 
-    /*
-verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un ramo)
-*/
-    public Integer verificarPrerrequisitos(Integer cod_asig){
-        // obtener los prerrequisitos de una carrera
-        List<Integer> codigos_prerrequisitos = prerrequisitoService.obtenerPrerrequisitos(cod_asig);
-        if(codigos_prerrequisitos.isEmpty()){
-            return -2; // no se encontraron prerrequisitos para este ramo
-        }
-
-        for(Integer c : codigos_prerrequisitos){
-            // verificar si la nota de cada prerrequisitos existe y es mayor a 4
-            Float nota = notaService.obtenerNotaDeRamo(c);
-
-            if(nota == null){
-                //System.out.println("asignatura: " + c + " tiene una nota: " + nota);
-                return -1; // no esta registrado a ese ramo
-            }
-
-            if(nota < 4){
-                return 0; // no paso el ramo
-            }
-        }
-        return 1; // cumple todos los requisitos
-    }
 
 
     // inscribir un alumno a un ramo
@@ -134,14 +139,13 @@ verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un 
 
         // verificar si es puede inscribir por cupos
         Integer nroInscritos = notaService.nroInscritos(cod_asig, anio, semestre, seccion);
-        Integer cupos = planEstudioRepository.obtenerCupos(cod_asig);
+        Integer cupos = planEstudioRepository.obtenerCupos(cod_asig);  // ver porque esto sale null
 
         if(nroInscritos > 50){
             return null; // se genera sobrecupo
         }
 
         // verificar si cumple los requisitos para tomar el ramo (esto ya debería de haberse comprobado en el frontend)
-
         Nota inscribir = new Nota();
         inscribir.setAnio(anio);
         inscribir.setSemestre(semestre);

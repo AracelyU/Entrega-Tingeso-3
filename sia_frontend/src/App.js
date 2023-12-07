@@ -1,10 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import './App.css';
+import './style/App.css';
 import React from "react";
-import Navbar from "./component/Navbar"
 import PerfilEstudiante from "./component/PerfilEstudiante";
 import Horario from "./component/HorarioComponent";
-import Inscripcion from "./component/InscriptionComponent";
+import Inscripcion from "./component/Malla";
 import Ayuda from "./component/AyudaComponent";
 import InscripcionHorario from "./component/InscriptionHorario";
 

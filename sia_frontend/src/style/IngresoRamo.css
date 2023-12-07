@@ -1,0 +1,26 @@
+.ul, li {
+    list-style: none; /* Elimina los puntos de lista */
+    padding: 0; /* Elimina el relleno de la lista */
+    margin: 0; /* Elimina el margen de la lista */
+}
+
+.carrera, h2 {
+    color: #23394d;
+}
+
+.select-container {
+    display: flex;
+    flex-direction: column;
+    width: 3cm; /* Ancho deseado del contenedor */
+}
+
+label {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0.5rem; /* Margen inferior opcional para separar las etiquetas */
+}
+
+select {
+    width: 40%; /* Ancho deseado para el select */
+    margin-bottom: 1rem; /* Margen inferior opcional para separar los selects */
+}

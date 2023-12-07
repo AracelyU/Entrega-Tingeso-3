@@ -1,0 +1,30 @@
+.table-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Establecer un ancho específico para la primera columna */
+.primera-columna {
+    /*white-space: nowrap;*/
+}
+
+.seleccionado {
+    background-color: #e07924;
+    color: #fff;
+}
+
+.esquina {
+    font-weight: bold; /* Ajusta según sea necesario */
+    text-align: center; /* Centra el texto en la celda */
+}

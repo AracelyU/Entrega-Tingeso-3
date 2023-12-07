@@ -18,11 +18,6 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
         @Query("SELECT COUNT(*) FROM Nota n WHERE n.rut =:rut")  // se tiene que revisar porque no siempre son 6
         Integer nivelEstudiante(@Param("rut") String rut);
 
-
-        // obtener el nuevo semestre
-        @Query("SELECT n.anio, n.semestre FROM Nota n WHERE n.rut =:rut AND n.anio =(select MAX(anio) from Nota) AND n.semestre = (select MAX(semestre) from Nota)")
-        List<Integer> newAgeAcademy(@Param("rut") String rut);
-
         /*
         obtener la nota de un ramo
          */
@@ -34,6 +29,21 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
          */
         @Query("SELECT count(*) FROM Nota n WHERE n.rut=:rut AND n.anio=:anio AND n.semestre=:semestre")
         Integer numeroRamos(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
+
+
+        // obtener los ramos inscritos en el anio y semestre de un estudiante
+        @Query("SELECT n FROM Nota n WHERE n.rut=:rut AND n.anio=:anio AND n.semestre=:semestre")
+        List<Nota> ramosInscritos(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
+
+
+        // obtener los ramos dados y reprobados
+        @Query("SELECT n FROM Nota n WHERE n.rut=:rut AND n.anio!=:anio AND n.semestre!=:semestre AND n.nota < 4")
+        List<Nota> ramosReprobados(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
+
+
+        // obtener los ramos dados y reprobados
+        @Query("SELECT n FROM Nota n WHERE n.rut=:rut AND n.anio!=:anio AND n.semestre!=:semestre AND n.nota >= 4")
+        List<Nota> ramosAprobados(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
 
 
         /*

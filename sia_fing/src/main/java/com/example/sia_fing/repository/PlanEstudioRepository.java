@@ -18,7 +18,6 @@ public interface PlanEstudioRepository extends JpaRepository<PlanEstudio, Intege
     @Query("SELECT p FROM PlanEstudio p WHERE p.cod_carr =:cod_carr")
     List<PlanEstudio> findPlanEstudioByCod_carr(@Param("cod_carr") Integer cod_carr);
 
-
     /*
     obtener nro de ramos según el nivel
      */

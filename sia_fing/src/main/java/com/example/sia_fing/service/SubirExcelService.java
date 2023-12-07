@@ -20,6 +20,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Random;
 
 
 /*
@@ -133,6 +134,11 @@ public class SubirExcelService {
                 String rut = row.getCell(2).getStringCellValue();
                 Integer cod_asig = (int) row.getCell(3).getNumericCellValue(); // <-- Corregido
                 double nota = row.getCell(4).getNumericCellValue();
+
+                if(nota < 4){
+                    Random random = new Random();
+                    nota =  4 + (random.nextDouble() * (7 - 4));  // nota aleatoria entre 4 y 7
+                }
 
                 notaService.guardarNota(anio, semestre, rut, cod_asig, nota);
 

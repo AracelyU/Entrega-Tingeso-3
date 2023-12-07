@@ -20,7 +20,6 @@ public class Horario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    String dia;
 
     @ElementCollection
     List<Integer> modulo1 = Arrays.asList(0, 0, 0, 0, 0, 0, 0);
@@ -40,8 +39,8 @@ public class Horario {
     @ElementCollection
     List<Integer> modulo6 = Arrays.asList(0, 0, 0, 0, 0, 0, 0);
 
-    Integer modulo;
     Integer cod_asig; // una asignatura se enlaza a un horario
-    String rut;
+
+    String seccion;
 
 }

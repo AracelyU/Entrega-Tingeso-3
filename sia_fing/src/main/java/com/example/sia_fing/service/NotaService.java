@@ -37,32 +37,6 @@ public class NotaService {
         return n;
     }
 
-    /*
-    determinar nuevo año academico con anio y semestre (a la hora de ingresar el ramo al estudiante -> inscribir ramo como un objeto nota pero con nota vacio 0 -1)
-     */
-    public List<Integer> newAgeAcademy(){
-        EstudiantePrincipal e = estudiantePrincipalService.obtenerEstudiantePrincipal();
-        if(e == null){
-            return null;
-        }
-
-        List<Integer> datos = notaRepository.newAgeAcademy(e.getRut());
-        Integer anio = datos.get(0);
-        Integer semestre = datos.get(1);
-        List<Integer> newDatos = new ArrayList<>();
-
-        if(semestre == 1){
-            newDatos.add(anio);
-            newDatos.add(2);
-
-        }else{
-            Integer newAnio = anio+1;
-            newDatos.add(newAnio);
-            newDatos.add(1);
-        }
-
-        return newDatos;
-    }
 
 
     /*
@@ -109,6 +83,31 @@ public class NotaService {
         }
         return notaRepository.RamosAnioSemestre(anio, semestre, ep.getRut());
     }
+
+
+    /*
+    obtener los ramos inscritos
+     */
+    public List<Nota> ramosInscritos(String rut, Integer anio, Integer semestre){
+        return notaRepository.ramosInscritos(anio, semestre, rut);
+    }
+
+    /*
+    obtener ramos reprobados
+     */
+    public List<Nota> ramosReprobados(String rut, Integer anio, Integer semestre){
+        return notaRepository.ramosReprobados(anio, semestre, rut);
+    }
+
+    /*
+    obtener ramos aprobados
+    */
+    public List<Nota> ramosAprobados(String rut, Integer anio, Integer semestre){
+        return notaRepository.ramosAprobados(anio, semestre, rut);
+    }
+
+
+
 
 
     // función de numeroRamos

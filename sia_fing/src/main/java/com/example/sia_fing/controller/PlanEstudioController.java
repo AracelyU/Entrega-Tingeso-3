@@ -2,9 +2,11 @@ package com.example.sia_fing.controller;
 
 
 import com.example.sia_fing.entity.EstudiantePrincipal;
+import com.example.sia_fing.entity.Horario;
 import com.example.sia_fing.entity.Nota;
 import com.example.sia_fing.entity.PlanEstudio;
 import com.example.sia_fing.service.EstudiantePrincipalService;
+import com.example.sia_fing.service.HorarioService;
 import com.example.sia_fing.service.NotaService;
 import com.example.sia_fing.service.PlanEstudioService;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -31,6 +33,9 @@ public class PlanEstudioController {
     @Autowired
     EstudiantePrincipalService estudiantePrincipalService;
 
+    @Autowired
+    HorarioService horarioService;
+
 
     @GetMapping("/getAll")   // mostrar todos los ramos
     public ResponseEntity<List<PlanEstudio>> obtenerRamos(){
@@ -45,9 +50,14 @@ public class PlanEstudioController {
 
     // mostrar ramos por carrera elegida, el cod_carr es del estudiante principal
     // esto para ingresar horario
-    @GetMapping("/getRamos/{cod_carr}")
-    public ResponseEntity<List<PlanEstudio>> obtenerRamosPorCarrera(@PathVariable("cod_carr") Integer cod_carr){
-        List<PlanEstudio> pe = planEstudioService.obtenerRamosPorCarrera(cod_carr);
+    @GetMapping("/getRamos")
+    public ResponseEntity<List<PlanEstudio>> obtenerRamosPorCarrera(){
+        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(ep == null){
+            return ResponseEntity.noContent().build();
+        }
+
+        List<PlanEstudio> pe = planEstudioService.obtenerRamosPorCarrera(ep.getCod_carr());
         if(pe.isEmpty()){
             return ResponseEntity.noContent().build();
         }
@@ -75,10 +85,6 @@ public class PlanEstudioController {
     // obtener los ramos que puede y le tocan tomar
     @GetMapping("/getRamosTomar")
     public ResponseEntity<List<PlanEstudio>> obtenerRamosQuePuedeTomar(){
-        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
-        if(ep == null){
-            return ResponseEntity.noContent().build();
-        }
         List<PlanEstudio> pe = planEstudioService.obtenerRamosInscribir();
         return ResponseEntity.ok(pe);
     }
@@ -86,13 +92,18 @@ public class PlanEstudioController {
 
     // para inscribir un ramo
     // esto para el momento que hayas escogido sección
-    @PostMapping("/inscribirRamo/{cod_asig}/{seccion}/{anio}/{semestre}")
+    @PostMapping("/inscribirRamo/{cod_asig}/{seccion}")
     public ResponseEntity<Nota> inscribirRamo(@PathVariable("cod_asig") Integer cod_asig,
-                                                @PathVariable("seccion") String seccion,
-                                                @PathVariable("anio") Integer anio,
-                                                @PathVariable("semestre") Integer semestre){
+                                                @PathVariable("seccion") String seccion){
+        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(ep == null){
+            return ResponseEntity.noContent().build();
+        }
 
-        Nota n = planEstudioService.inscribirRamo(seccion, cod_asig, anio, semestre);
+        // se crea su horario asociado
+        horarioService.crearHorario(cod_asig, seccion);  // un horario es solo a una asignatura y tiene un solo curso
+
+        Nota n = planEstudioService.inscribirRamo(seccion, cod_asig, ep.getAnio(), ep.getSemestre());
         System.out.println("se ingreso el ramo correctamente");
 
         if(n == null){

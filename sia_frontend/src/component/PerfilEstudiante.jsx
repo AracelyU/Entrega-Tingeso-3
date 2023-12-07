@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import Navbar from "./Navbar";
 import { fetchData } from "./fetchData"
-import InscriptionComponent from "./InscriptionComponent";
+import Malla from "./Malla";
 import {useFetch} from "./useFetch";
 
 export default function PerfilEstudiante() {

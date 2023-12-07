@@ -8,6 +8,7 @@ import com.example.sia_fing.repository.HorarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,8 +35,19 @@ public class HorarioService {
 
 
     // ver si dos modulos son iguales
-    public Integer verificarTope(String rut, Integer dia, Integer modulo){
-        List<Horario> horarios = horarioRepository.horariosEstudiante(rut);
+    public Integer verificarTope(Integer dia, Integer modulo, Integer anio, Integer semestre){
+
+        // obtener todos los horarios de los ramos que da el estudiante
+        // para ello necesito conseguir las asignaturas de los ramos que esta dando el estudiante
+        List<Integer> codigos_asignaturas = notaService.ramosAnioSemestre(anio, semestre);
+
+        List<Horario> horarios = new ArrayList<>();
+        for(Integer cod_asig : codigos_asignaturas){
+            Horario h = horarioRepository.horarioEstudiante(cod_asig);
+            if(h != null){
+                horarios.add(h);
+            }
+        }
 
         for(Horario h : horarios){
             switch (modulo){
@@ -79,9 +91,18 @@ public class HorarioService {
     }
 
 
+    // guardar horario
+    public Horario crearHorario(Integer cod_asig, String seccion){
+        Horario h = new Horario();
+        h.setCod_asig(cod_asig);
+        h.setSeccion(seccion);
+        horarioRepository.save(h);
+        return h;
+    }
+
 
     // guardar horario
-    public Horario guardarHorario(Integer dia, Integer modulo, Integer cod_asig){
+    public Horario guardarHorario(Integer dia, Integer modulo, Integer cod_asig, String seccion){
 
         EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
         if(ep == null){
@@ -92,48 +113,25 @@ public class HorarioService {
         // verificar que no se genere tope entre los horarios de las asignaturas del mismo estudiante
         // esto viendo que para todos los horarios registrados de los cursos del estudiante no
         // se este ocupando el mismo módulo
-        Integer tope = verificarTope(ep.getRut(), dia, modulo);
+        Integer tope = verificarTope(dia, modulo, ep.getAnio(), ep.getSemestre());
 
-        if(tope == 1){
-            System.out.println("se genero tope");
-            return null;
-        }
+        //if(tope == 1){
+        //    System.out.println("se genero tope");
+        //    return null;
+        //}
 
         // verificar si la asignatura tiene horario
-        Horario horario = horarioRepository.horarioEstudiante(ep.getRut(), cod_asig);
+        Horario horario = horarioRepository.horarioEstudiante(cod_asig);
 
-        if(horario == null){  // se crea nuevo horario y se actualiza con el nuevo modulo
+        if(horario == null){  // se crea nuevo horario
             Horario h = new Horario();
-            h.setRut(ep.getRut());
             h.setCod_asig(cod_asig);
-            switch (modulo){
-                case 1:
-                    h.getModulo1().set(dia-1, 1);
-                    break;
-                case 2:
-                    h.getModulo2().set(dia-1, 1);
-                    break;
-                case 3:
-                    h.getModulo3().set(dia-1, 1);
-                    break;
-                case 4:
-                    h.getModulo4().set(dia-1, 1);
-                    break;
-                case 5:
-                    h.getModulo5().set(dia-1, 1);
-                    break;
-                case 6:
-                    h.getModulo6().set(dia-1, 1);
-                    break;
-                default:
-                    System.out.println("error");
-                    break;
-            }
+            h.setSeccion(seccion);
             horarioRepository.save(h);
             return h;
         }
 
-        // de lo contrario ya existe un horario para esa asignatura
+        // de lo contrario ya existe un horario para esa asignatura y se necesita actualizar
         switch (modulo){
             case 1:
                 horario.getModulo1().set(dia-1, 1);

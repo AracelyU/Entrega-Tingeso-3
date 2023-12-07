@@ -36,13 +36,16 @@ public class HorarioController {
         return ResponseEntity.ok(h);
     }
 
+    @GetMapping("/getHorarioAsig/{cod_asig}")
+
 
     // crea el horario
-    @PostMapping("/createHorario/{dia}/{modulo}/{cod_asig}")
+    @PostMapping("/createHorario/{dia}/{modulo}/{cod_asig}/{seccion}")
     public ResponseEntity<Horario> crearHorario(@PathVariable("dia") Integer dia,
                                                 @PathVariable("modulo") Integer modulo,
-                                                @PathVariable("cod_asig") Integer cod_asig){
-        Horario h = horarioService.guardarHorario(dia, modulo, cod_asig);
+                                                @PathVariable("cod_asig") Integer cod_asig,
+                                                @PathVariable("seccion") String seccion){
+        Horario h = horarioService.guardarHorario(dia, modulo, cod_asig, seccion);
         if(h == null){
             return ResponseEntity.noContent().build();
         }

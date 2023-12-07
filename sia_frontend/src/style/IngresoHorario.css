@@ -1,0 +1,85 @@
+.select-container {
+    display: flex;
+    flex-direction: column;
+    width: 3cm; /* Ancho deseado del contenedor */
+}
+
+label {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0.5rem; /* Margen inferior opcional para separar las etiquetas */
+}
+
+select {
+    width: 40%; /* Ancho deseado para el select */
+    margin-bottom: 1rem; /* Margen inferior opcional para separar los selects */
+}
+
+.checkbox-list ul {
+    list-style: none; /* Elimina los puntos de lista */
+    padding: 0; /* Elimina el relleno de la lista */
+    margin: 0; /* Elimina el margen de la lista */
+}
+
+.checkbox-list ul,
+.grid {
+    display: flex;
+    padding: 0; /* Elimina el relleno predeterminado de la lista */
+    margin: 0; /* Elimina el margen predeterminado de la lista */
+}
+
+.grid li {
+    margin-right: 10px;
+}
+
+.checkbox-label {
+    position: relative;
+    padding: 8px;
+    background-color: #e07924;
+    color: #fff;
+    border: 2px solid #e07924;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap; /* Evita saltos de línea */
+    width: 100px; /* Ancho fijo deseado */
+}
+
+.checkbox-label input {
+    position: absolute;
+    left: -9999px; /* Mueve el input fuera del área visible */
+    appearance: none; /* Oculta el estilo predeterminado del sistema operativo */
+}
+
+.checkbox-label.selected {
+    background-color: #fff;
+    color: #e07924;
+}
+
+.tabla-container {
+    position: fixed;
+    top: 80%;
+    right: 0;
+    transform: translate(-20%, -100%);
+}
+
+.submit {
+    background-color: #e07924; /* Cambia el color a un tono diferente */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #f67655; /* Cambia el color al hacer hover */
+    transform: translateY(-2px); /* Eleva el botón al hacer hover */
+}
+
+
+.mi-alerta-error {
+    border: 2px solid #ffe6e6; /* Borde rojo */
+    background-color: #ffffff; /* Fondo rosa claro */
+    color: #ff0000; /* Texto rojo */
+}

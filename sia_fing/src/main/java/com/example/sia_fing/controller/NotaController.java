@@ -45,15 +45,57 @@ public class NotaController {
     /*
     consultar cuantas asignaturas tiene el alumno el año 2024 semestre 1
      */
-    @GetMapping("/nroRamosInscritos/{anio}/{semestre}")
-    public ResponseEntity<Integer> nroRamosInscritos(@PathVariable("anio") Integer anio,
-                                                     @PathVariable("semestre") Integer semestre){
+    @GetMapping("/nroRamosInscritos")
+    public ResponseEntity<Integer> nroRamosInscritos(){
         EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
         if(ep == null){
             return ResponseEntity.noContent().build();
         }
-        Integer datos = notaService.numeroRamos(anio, semestre, ep.getRut());
+        Integer datos = notaService.numeroRamos(ep.getAnio(), ep.getSemestre(), ep.getRut());
         return ResponseEntity.ok(datos);
+    }
+
+
+    @GetMapping("/ramosInscritos")
+    public ResponseEntity<List<Nota>> ramosInscrito(){
+        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(ep == null){
+            return ResponseEntity.noContent().build();
+        }
+        List<Nota> inscritos = notaService.ramosInscritos(ep.getRut(), ep.getAnio(), ep.getSemestre());
+        if(inscritos == null){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(inscritos);
+
+    }
+
+    @GetMapping("/ramosReprobados")
+    public ResponseEntity<List<Nota>> ramosReprobados(){
+        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(ep == null){
+            return ResponseEntity.noContent().build();
+        }
+        List<Nota> inscritos = notaService.ramosReprobados(ep.getRut(), ep.getAnio(), ep.getSemestre());
+        if(inscritos == null){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(inscritos);
+
+    }
+
+    @GetMapping("/ramosAprobados")
+    public ResponseEntity<List<Nota>> ramosAprobados(){
+        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(ep == null){
+            return ResponseEntity.noContent().build();
+        }
+        List<Nota> inscritos = notaService.ramosAprobados(ep.getRut(), ep.getAnio(), ep.getSemestre());
+        if(inscritos == null){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(inscritos);
+
     }
 
     /*

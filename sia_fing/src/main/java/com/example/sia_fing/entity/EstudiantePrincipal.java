@@ -23,14 +23,7 @@ public class EstudiantePrincipal {
     Integer nivel;
     Integer cod_carr;
     String nom_carr;
-
-    /*
-    inscripción de asignaturas es agregar un estudiante
-     */
-
-
-
-
-
+    Integer anio;
+    Integer semestre;
 
 }
