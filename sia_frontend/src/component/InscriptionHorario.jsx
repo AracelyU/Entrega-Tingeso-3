@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import "../style/IngresoHorario.css"
 import Swal from 'sweetalert2';
 import Tabla from './Tabla';
+import horarioService from "../service/HorarioService";
 
 
 function CheckboxList(options) {
@@ -38,6 +39,8 @@ export default function InscriptionHorario() {
     const [ramos, setRamos] = useState([]);
     const [carreras, setCarreras] = useState([]);  // traer ramos que puede inscribir
     const [input, setInput] = useState(initialState);
+    const [horarioSeleccionado, setHorarioSeleccionado] = useState(null);
+
 
     const [selectedDia, setSelectedDia] = useState(null);
     const [selectedModulo, setSelectedModulo] = useState(null);
@@ -80,7 +83,7 @@ export default function InscriptionHorario() {
         // obtener los ramos de una carrera
         if (codigoCarrera) {
             try {
-                const response = await fetch(`http://localhost:8080/ramo/getRamos/${codigoCarrera}`);
+                const response = await fetch(`http://localhost:8080/ramo/getRamos`);
                 const data = await response.json();
                 setRamos(data);
             } catch (error) {
@@ -90,6 +93,9 @@ export default function InscriptionHorario() {
             // Limpiar la lista de ramos si no hay una carrera seleccionada
             setRamos([]);
         }
+
+        console.log("condicion ramos");
+
 
     };
 
@@ -138,6 +144,33 @@ export default function InscriptionHorario() {
             return;
         }
 
+        const mensaje = `¿Desea inscribir la asignatura elegida el día ${input.dia} modulo ${input.modulo}`
+
+        Swal.fire({
+            title: mensaje,
+            text: "No podra desincribir la asignatura más tarde",
+            icon: "question",
+            showDenyButton: true,
+            confirmButtonText: "Confirmar",
+            confirmButtonColor: "rgb(68, 194, 68)",
+            denyButtonText: "Cancelar",
+            denyButtonColor: "rgb(190, 54, 54)",
+
+        }).then((result) => {
+
+            horarioService.createHorario(input);
+
+            Swal.fire({
+                title: "Horario creado exitosamente",
+                timer: 2000,
+                icon: "success",
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                },
+            })
+
+        });
 
 
     }
@@ -161,7 +194,7 @@ export default function InscriptionHorario() {
                           value={input.codigo_carr}
                           onChange={obtenerRamos}
                       >
-                          <option value={""}>Seleccione Carrera</option>
+                          <option value={""} disabled>Seleccione Carrera</option>
                           {carreras.map((c) => (
                               <option key={c.id} value={c.codigo_carr}>
                                   {c.nom_carr}
@@ -179,7 +212,7 @@ export default function InscriptionHorario() {
                           value={input.cod_asig}
                           onChange={changeCod_asigHandler}
                       >
-                          <option value={""}>Seleccione Asignatura</option>
+                          <option value={""} disabled>Seleccione Asignatura</option>
                           {ramos.map((r) => (
                               <option key={r.id} value={r.cod_asig}>
                                   {r.nom_asig}
@@ -223,7 +256,7 @@ export default function InscriptionHorario() {
               </div>
 
               <div className="tabla-container">
-                  <Tabla selectedDia={selectedDia} selectedModulo={selectedModulo} />
+                  <Tabla selectedDia={selectedDia} selectedModulo={selectedModulo} horario={horarioSeleccionado} />
               </div>
 
               <div className="checkbox-list">
@@ -244,7 +277,10 @@ export default function InscriptionHorario() {
 
               <br></br>
               <button className="submit" onClick={crearHorario}>Ingresar Horario</button>
-
+              <br></br>
+              <br></br>
+              <h5>* Esta sección es solo para un academico. Un estudiante no</h5>
+              <h5>debería de poder acceder aquí normalmente.</h5>
 
           </div>
 

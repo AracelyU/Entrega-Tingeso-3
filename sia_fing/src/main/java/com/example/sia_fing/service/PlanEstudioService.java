@@ -61,11 +61,11 @@ public class PlanEstudioService {
         if(ep == null){
             return null;
         }
-        List<PlanEstudio> ramos = obtenerRamosPorCarrera(ep.getCod_carr());
+        List<PlanEstudio> ramos = obtenerRamosPorCarrera(ep.getCod_carr()); // obtengo todos los ramos
         List<PlanEstudio> ramosInscribir = new ArrayList<>();
 
-        for(PlanEstudio r : ramos){
-            if(verificarPrerrequisitos(r.getCod_asig()) == 1){
+        for(PlanEstudio r : ramos){ // para cada ramo
+            if(verificarPrerrequisitos(r.getCod_asig()) == 1){  // veo si cumple los prerrequisitos de ese ramo
                 ramosInscribir.add(r);
             }
         }
@@ -76,6 +76,13 @@ public class PlanEstudioService {
 verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un ramo)
 */
     public Integer verificarPrerrequisitos(Integer cod_asig){
+
+        Float nota_cod_asig = notaService.obtenerNotaDeRamo(cod_asig);
+
+        if(nota_cod_asig != null){ // significa que el ramo ya lo diste
+            return -3;
+        }
+
         // obtener los prerrequisitos de una carrera
         List<Integer> codigos_prerrequisitos = prerrequisitoService.obtenerPrerrequisitos(cod_asig);
         if(codigos_prerrequisitos.isEmpty()){
@@ -93,11 +100,11 @@ verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un 
             }
 
             if(nota < 4){
-                System.out.println("No paso este ramo: " + cod_asig);
+                //System.out.println("No paso este ramo: " + cod_asig);
                 return 0; // no paso el ramo
             }
         }
-        System.out.println("cumple con todos los prerrequisitos: " + cod_asig);
+        //System.out.println("cumple con todos los prerrequisitos: " + cod_asig);
         return 1; // cumple todos los requisitos
     }
 

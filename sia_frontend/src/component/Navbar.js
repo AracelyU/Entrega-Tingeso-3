@@ -8,7 +8,7 @@ import {
     MenuItem,
     MenuItemLink,
     MobileIcon,
-    Wrapper} from "./NavbarElement";
+    Wrapper} from "../style/NavbarElement";
 import { IconContext } from "react-icons";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IoMdPerson } from "react-icons/io";
@@ -29,9 +29,16 @@ const Navbar = () => {
         navigate("/horario-estudiante");
     };
 
+    const navigateMalla = (event) => {
+        navigate("/malla");
+    };
+
     const navigateInscripcion = (event) => {
         navigate("/inscripcion-estudiante");
     };
+
+
+
     const navigaInscripcionHorario = (event) => {
         navigate("/ingresar-horario");
     };
@@ -46,7 +53,6 @@ const Navbar = () => {
         <Container>
             <Wrapper>
                 <IconContext.Provider value = {{ style: {fontSize: "2rem"} }}>
-
                     <LogoContainer>
                         <br/>
                         <p>SIA - </p>
@@ -66,6 +72,15 @@ const Navbar = () => {
                                 <div>
                                     <IoMdPerson />
                                     Perfil
+                                </div>
+                            </MenuItemLink>
+                        </MenuItem>
+
+                        <MenuItem>
+                            <MenuItemLink onClick={navigateMalla}>
+                                <div>
+                                    <IoMdPerson />
+                                    Malla
                                 </div>
                             </MenuItemLink>
                         </MenuItem>

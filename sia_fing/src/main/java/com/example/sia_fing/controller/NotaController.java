@@ -90,7 +90,7 @@ public class NotaController {
         if(ep == null){
             return ResponseEntity.noContent().build();
         }
-        List<Nota> inscritos = notaService.ramosAprobados(ep.getRut(), ep.getAnio(), ep.getSemestre());
+        List<Nota> inscritos = notaService.ramosAprobados(ep.getRut());
         if(inscritos == null){
             return ResponseEntity.noContent().build();
         }

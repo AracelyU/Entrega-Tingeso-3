@@ -1,26 +1,83 @@
-.ul, li {
-    list-style: none; /* Elimina los puntos de lista */
-    padding: 0; /* Elimina el relleno de la lista */
-    margin: 0; /* Elimina el margen de la lista */
+:root {
+    --primary-color: #e07924; /* Color primario de React */
+    --secondary-color: #23394d; /* Color secundario de React */
+    --accent-color: #e07924; /* Color de acento de React */
 }
 
-.carrera, h2 {
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
     color: #23394d;
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
 }
 
-.select-container {
-    display: flex;
-    flex-direction: column;
-    width: 3cm; /* Ancho deseado del contenedor */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Espacio vertical y horizontal entre las columnas */
+    margin-left: 0.5cm;
 }
 
-label {
-    display: inline-block;
+.leftSection {
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para la consistencia del color de fondo */
+}
+
+.rightSection {
+    padding: 20px;
+    background-color: #f0f0f0; /* Puedes ajustar este color según sea necesario */
+}
+
+.ramoInfo {
+    margin-bottom: 15px;
+}
+
+.seccionInfo {
+    margin-bottom: 15px;
+}
+
+.planInfo {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    margin-bottom: 20px; /* Ajusta el margen inferior según sea necesario */
+}
+
+.infoContainer {
     width: 100%;
-    margin-bottom: 0.5rem; /* Margen inferior opcional para separar las etiquetas */
 }
 
-select {
-    width: 40%; /* Ancho deseado para el select */
-    margin-bottom: 1rem; /* Margen inferior opcional para separar los selects */
+.buttonContainer {
+    text-align: right;
+}
+
+.buttonContainer button {
+    background-color: var(--accent-color);
+    color: #23394d;
+    padding: 10px;
+    cursor: pointer;
+    border: 2px solid #e07924;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: #23394d;
+    padding: 10px;
+    cursor: pointer;
+    border: 2px solid #e07924;
+}
+button.input {
+    background-color: #fff;
+    color: #e07924;
+}
+
+
+button:hover {
+    background-color: darken(var(--accent-color), 10%);
+}
+
+hr {
+    border: 1px solid var(--primary-color);
 }

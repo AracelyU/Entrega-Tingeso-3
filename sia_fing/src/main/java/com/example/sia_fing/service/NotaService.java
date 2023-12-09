@@ -50,8 +50,6 @@ public class NotaService {
         return notaRepository.NotaByCod_asig(cod_asig, e.getRut());
     }
 
-
-
     /*
     ver la situación de repitencia de un estudiante
      */
@@ -102,8 +100,8 @@ public class NotaService {
     /*
     obtener ramos aprobados
     */
-    public List<Nota> ramosAprobados(String rut, Integer anio, Integer semestre){
-        return notaRepository.ramosAprobados(anio, semestre, rut);
+    public List<Nota> ramosAprobados(String rut){
+        return notaRepository.ramosAprobados(rut);
     }
 
 

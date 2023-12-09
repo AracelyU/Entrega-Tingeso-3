@@ -5,32 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2e95efd-8b6d-4efd-8ef5-cfb53d746400" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/Malla.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/style/IngresoHorario.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/style/IngresoRamo.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/HorarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/HorarioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/NotaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/NotaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/PlanEstudioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/PlanEstudioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/entity/EstudiantePrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/entity/EstudiantePrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/entity/Horario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/entity/Horario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/HorarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/HorarioRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/NotaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/NotaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/PlanEstudioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/PlanEstudioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/EstudiantePrincipalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/EstudiantePrincipalService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/HorarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/HorarioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/NotaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/NotaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/PlanEstudioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/PlanEstudioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/SubirExcelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/SubirExcelService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/AyudaComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/AyudaComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/HorarioComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/HorarioComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/InscriptionComponent.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/InscriptionHorario.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/InscriptionHorario.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Malla.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Malla.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/NavbarElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/NavbarElement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/PerfilEstudiante.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/PerfilEstudiante.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Tabla.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Tabla.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/IngresoHorario.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/IngresoHorario.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/IngresoRamo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/IngresoRamo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/InscriptionRamo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/Malla.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,24 +47,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/arace/Documents/GitHub/Entrega-Tingeso-3/sia_fing",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/arace/Documents/GitHub/Entrega-Tingeso-3/sia_frontend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\arace\Documents\GitHub\Entrega-Tingeso-3\sia_frontend\src\style" />
+      <recent name="C:\Users\arace\Documents\GitHub\Entrega-Tingeso-3\sia_frontend\src\component" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -83,7 +79,10 @@
       <workItem from="1701820001028" duration="1643000" />
       <workItem from="1701881503646" duration="568000" />
       <workItem from="1701885102772" duration="12454000" />
-      <workItem from="1701907640292" duration="7063000" />
+      <workItem from="1701907640292" duration="7813000" />
+      <workItem from="1702072259287" duration="6965000" />
+      <workItem from="1702081690513" duration="7491000" />
+      <workItem from="1702090377703" duration="2453000" />
     </task>
     <servers />
   </component>

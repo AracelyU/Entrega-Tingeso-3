@@ -29,13 +29,16 @@ public class HorarioService {
         return horarioRepository.findAll();
     }
 
+
+    // obtener horarios de una asignatura y sección
+
     public void eliminarHorarios(){
         horarioRepository.deleteAll();
     }
 
 
     // ver si dos modulos son iguales
-    public Integer verificarTope(Integer dia, Integer modulo, Integer anio, Integer semestre){
+    public Integer verificarTope(Integer dia, Integer modulo, Integer anio, Integer semestre, String seccion){
 
         // obtener todos los horarios de los ramos que da el estudiante
         // para ello necesito conseguir las asignaturas de los ramos que esta dando el estudiante
@@ -43,7 +46,7 @@ public class HorarioService {
 
         List<Horario> horarios = new ArrayList<>();
         for(Integer cod_asig : codigos_asignaturas){
-            Horario h = horarioRepository.horarioEstudiante(cod_asig);
+            Horario h = horarioRepository.horarioEstudiante(cod_asig, seccion);
             if(h != null){
                 horarios.add(h);
             }
@@ -101,6 +104,12 @@ public class HorarioService {
     }
 
 
+
+    // obtener horario de asignatura por seccion
+    public Horario obtenerHorario(Integer cod_asig, String seccion){
+        return horarioRepository.horarioEstudiante(cod_asig, seccion);
+    }
+
     // guardar horario
     public Horario guardarHorario(Integer dia, Integer modulo, Integer cod_asig, String seccion){
 
@@ -113,7 +122,7 @@ public class HorarioService {
         // verificar que no se genere tope entre los horarios de las asignaturas del mismo estudiante
         // esto viendo que para todos los horarios registrados de los cursos del estudiante no
         // se este ocupando el mismo módulo
-        Integer tope = verificarTope(dia, modulo, ep.getAnio(), ep.getSemestre());
+        Integer tope = verificarTope(dia, modulo, ep.getAnio(), ep.getSemestre(), seccion);
 
         //if(tope == 1){
         //    System.out.println("se genero tope");
@@ -121,7 +130,7 @@ public class HorarioService {
         //}
 
         // verificar si la asignatura tiene horario
-        Horario horario = horarioRepository.horarioEstudiante(cod_asig);
+        Horario horario = obtenerHorario(cod_asig, seccion);
 
         if(horario == null){  // se crea nuevo horario
             Horario h = new Horario();

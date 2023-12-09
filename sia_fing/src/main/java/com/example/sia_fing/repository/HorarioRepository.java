@@ -13,10 +13,10 @@ public interface HorarioRepository extends JpaRepository<Horario, Integer> {
 
 
     // obtener horario de una asignatura de un estudiante
-    @Query("SELECT h from Horario h WHERE h.cod_asig =:cod_asig")
-    Horario horarioEstudiante(@Param("cod_asig") Integer cod_asig);
+    @Query("SELECT h from Horario h WHERE h.cod_asig =:cod_asig and h.seccion =:seccion")
+    Horario horarioEstudiante(@Param("cod_asig") Integer cod_asig, @Param("seccion") String seccion);
 
-    // obtener lista de todos los horarios del estudiante
+    // obtener horarios de una asignatura y seccion
 
 
 

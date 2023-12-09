@@ -90,6 +90,22 @@ public class PlanEstudioController {
     }
 
 
+
+
+    // obtener cupos de un ramo por seccion
+    @GetMapping("/getCupos/{cod_asig}/{seccion}")
+    public ResponseEntity<Integer> cuposDisponibles(@PathVariable("cod_asig") Integer cod_asig,
+                                                    @PathVariable("seccion") String seccion){
+        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(ep == null){
+            return ResponseEntity.noContent().build();
+        }
+
+        Integer nroInscritos = 50 - notaService.nroInscritos(cod_asig, ep.getAnio(), ep.getSemestre(), seccion );
+        return ResponseEntity.ok(nroInscritos);
+    }
+
+
     // para inscribir un ramo
     // esto para el momento que hayas escogido sección
     @PostMapping("/inscribirRamo/{cod_asig}/{seccion}")

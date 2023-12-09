@@ -13,7 +13,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 @RestController
-@CrossOrigin(allowCredentials = "false")
+@CrossOrigin(origins = "false")
 @RequestMapping("/horario")
 public class HorarioController {
 
@@ -36,7 +36,16 @@ public class HorarioController {
         return ResponseEntity.ok(h);
     }
 
-    @GetMapping("/getHorarioAsig/{cod_asig}")
+    @GetMapping("/getHorarios/{cod_asig}/{seccion}")
+    public ResponseEntity<Horario> getHorarios(@PathVariable("cod_asig") Integer cod_asig,
+                                               @PathVariable("seccion") String seccion){
+
+        Horario h = horarioService.obtenerHorario(cod_asig, seccion);
+        if(h == null){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(h);
+    }
 
 
     // crea el horario

@@ -13,15 +13,9 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
 
 
         /*
-        obtener el número de niveles posible
-         */
-        @Query("SELECT COUNT(*) FROM Nota n WHERE n.rut =:rut")  // se tiene que revisar porque no siempre son 6
-        Integer nivelEstudiante(@Param("rut") String rut);
-
-        /*
         obtener la nota de un ramo
          */
-        @Query("SELECT n.nota FROM Nota n WHERE n.rut =:rut AND n.cod_asig =:cod_asig AND n.anio =(select MAX(anio) from Nota) AND n.semestre = (select MAX(semestre) from Nota)")
+        @Query("SELECT n.nota FROM Nota n WHERE n.rut =:rut AND n.cod_asig =:cod_asig")
         Float NotaByCod_asig(@Param("cod_asig") Integer cod_asig, @Param("rut") String rut);
 
         /*
@@ -41,9 +35,9 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
         List<Nota> ramosReprobados(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
 
 
-        // obtener los ramos dados y reprobados
-        @Query("SELECT n FROM Nota n WHERE n.rut=:rut AND n.anio!=:anio AND n.semestre!=:semestre AND n.nota >= 4")
-        List<Nota> ramosAprobados(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
+        // obtener los ramos dados y aprobados
+        @Query("SELECT n FROM Nota n WHERE n.rut=:rut AND n.nota >= 4")
+        List<Nota> ramosAprobados(@Param("rut") String rut);
 
 
         /*
@@ -55,7 +49,6 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
 
         /*
         obtener los codigos de los ramos inscritos de un estudiante por año y semestre señalado
-
          */
         @Query("SELECT n.cod_asig FROM Nota n WHERE n.rut=:rut AND n.anio=:anio AND n.semestre=:semestre")
         List<Integer> RamosAnioSemestre(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);

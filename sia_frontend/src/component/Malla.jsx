@@ -2,21 +2,16 @@ import {React, Fragment, useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from "./Navbar";
 import {useFetch} from "./useFetch";
-import {Button, Form} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import "../style/IngresoRamo.css"
-import "../style/InscriptionRamo.css"
+import "../style/IngresoRamo"
+import "../style/Malla.css"
 
 export default function Malla() {
     const {data, loading, error} = useFetch("http://localhost:8080/estudiantePrincipal/getEstudiante")
 
-    const initialState = {
-        cod_asig: "",
-    };
 
     const [ramos, setRamos] = useState([]);  // traer ramos que puede inscribir
     const [malla, setMalla] = useState([]);
-    const [input, setInput] = useState(initialState);
     const [inscrito, setInscrito] = useState([]);
     const [reprobado, setReprobado] = useState([]);
     const [aprobado, setAprobado] = useState([]);
@@ -38,44 +33,52 @@ export default function Malla() {
     },[])
 
 
-
-// obtener los ramos de su carrera
-    useEffect(()=>{
-        fetch("http://localhost:8080/ramo/getRamos")
-            .then(response=>response.json())
-            .then(data=>setMalla(data.map(({id,cod_plan, nivel, nom_asig,cupos, cod_asig})=>({id,cod_plan, nivel, nom_asig,cupos, cod_asig}))))
-    },[])
-
     // obtener los ramos inscritos
     useEffect(()=>{
         fetch("http://localhost:8080/nota/ramosInscritos")
             .then(response=>response.json())
-            .then(data=>setInscrito(data.map(({id,cod_asig})=>({id,cod_asig}))))
+            .then(data=>setInscrito(data.map(({id,cod_asig, nota})=>({id,cod_asig, nota}))))
     },[])
 
     // obtener los ramos reprobados
     useEffect(()=>{
         fetch("http://localhost:8080/nota/ramosReprobados")
             .then(response=>response.json())
-            .then(data=>setReprobado(data.map(({id,cod_asig})=>({id,cod_asig}))))
+            .then(data=>setReprobado(data.map(({id,cod_asig, nota})=>({id,cod_asig, nota}))))
     },[])
 
     // obtener los ramos aprobados
     useEffect(()=>{
         fetch("http://localhost:8080/nota/ramosAprobados")
             .then(response=>response.json())
-            .then(data=>setAprobado(data.map(({id,cod_asig})=>({id,cod_asig}))))
+            .then(data=>setAprobado(data.map(({id,cod_asig, nota})=>({id,cod_asig, nota}))))
     },[])
 
 
+    const [showModal, setShowModal] = useState(false);
+    const [modalData, setModalData] = useState({});
+    const [modalNota, setModalNota] = useState(null);
 
-    const changeCod_AsigHandler = event => {
-        setInput({...input, cod_asig: event.target.value});
+    const handleCellClick = (cellData) => {
+        setModalData(cellData);
+
+        // Buscar la nota correspondiente en inscrito, reprobado o aprobado
+        const notaInscrito = inscrito.find((i) => i.cod_asig === cellData.cod_asig)?.nota;
+        const notaReprobado = reprobado.find((r) => r.cod_asig === cellData.cod_asig)?.nota;
+        const notaAprobado = aprobado.find((a) => a.cod_asig === cellData.cod_asig)?.nota;
+
+        // Establecer la nota correspondiente en el estado del modal
+        setModalNota(notaAprobado || notaReprobado || notaInscrito);
+
+        setShowModal(true);
     };
 
-    const incribirRamo = (event) => {
-        console.log(input.cod_asig);
+    const handleCloseModal = () => {
+        setShowModal(false);
+        setModalData({});
+        setModalNota(null);
     };
+
 
     const renderTable = () => {
         const levels = Array.from(new Set(malla.map((asignatura) => asignatura.nivel)));
@@ -170,8 +173,13 @@ export default function Malla() {
 
             <div style={{marginLeft: '0.5cm'}}>
                 <div>
+                    {!data && (
+                        <h2>Espere a que se carguen todos los datos de la carrera</h2>
+                    )}
+
+
                     {data && (
-                        <h4>Malla Curricular: {data.nom_carr}</h4>
+                        <h4>Malla Curricular: {data.nom_carr} </h4>
                     )}
                     {renderTable()}
                 </div>

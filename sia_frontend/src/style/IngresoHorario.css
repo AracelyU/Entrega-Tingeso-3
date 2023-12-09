@@ -1,7 +1,7 @@
 .select-container {
     display: flex;
     flex-direction: column;
-    width: 3cm; /* Ancho deseado del contenedor */
+    width: 4cm; /* Ancho deseado del contenedor */
 }
 
 label {
@@ -11,7 +11,7 @@ label {
 }
 
 select {
-    width: 40%; /* Ancho deseado para el select */
+    width: 44%; /* Ancho deseado para el select */
     margin-bottom: 1rem; /* Margen inferior opcional para separar los selects */
 }
 
@@ -59,7 +59,7 @@ select {
     position: fixed;
     top: 80%;
     right: 0;
-    transform: translate(-20%, -100%);
+    transform: translate(-40%, -100%);
 }
 
 .submit {
