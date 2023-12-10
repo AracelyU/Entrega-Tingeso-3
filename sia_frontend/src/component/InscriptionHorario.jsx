@@ -4,6 +4,7 @@ import "../style/IngresoHorario.css"
 import Swal from 'sweetalert2';
 import Tabla from './Tabla';
 import horarioService from "../service/HorarioService";
+import {useNavigate} from "react-router-dom";
 
 
 function CheckboxList(options) {
@@ -28,6 +29,11 @@ function CheckboxList(options) {
 
 export default function InscriptionHorario() {
 
+    const navigate = useNavigate();
+    const recargar = () => {
+        navigate("/ingresar-horario");
+    };
+
     const initialState = {
         cod_asig: "",
         codigo_carr: "",
@@ -39,11 +45,11 @@ export default function InscriptionHorario() {
     const [ramos, setRamos] = useState([]);
     const [carreras, setCarreras] = useState([]);  // traer ramos que puede inscribir
     const [input, setInput] = useState(initialState);
-    const [horarioSeleccionado, setHorarioSeleccionado] = useState(null);
 
 
     const [selectedDia, setSelectedDia] = useState(null);
     const [selectedModulo, setSelectedModulo] = useState(null);
+    const [horarioIngresado, setHorarioIngresado] = useState(false);
 
     // obtener todas las carreras
     useEffect(()=>{
@@ -94,9 +100,8 @@ export default function InscriptionHorario() {
             setRamos([]);
         }
 
-        console.log("condicion ramos");
 
-
+        setHorarioIngresado(true);
     };
 
 
@@ -170,6 +175,7 @@ export default function InscriptionHorario() {
                 },
             })
 
+            recargar();
         });
 
 
@@ -255,10 +261,6 @@ export default function InscriptionHorario() {
                   </ul>
               </div>
 
-              <div className="tabla-container">
-                  <Tabla selectedDia={selectedDia} selectedModulo={selectedModulo} horario={horarioSeleccionado} />
-              </div>
-
               <div className="checkbox-list">
                   <label htmlFor="seccionSelect">Seleccione la sección de la asignatura:</label>
                   <ul className="grid">
@@ -273,6 +275,10 @@ export default function InscriptionHorario() {
                           />
                       ))}
                   </ul>
+              </div>
+
+              <div className="tabla-container">
+                  <Tabla selectedDia={selectedDia} selectedModulo={selectedModulo} input={input} horarioIngresado={horarioIngresado} />
               </div>
 
               <br></br>

@@ -89,6 +89,18 @@ public class PlanEstudioController {
         return ResponseEntity.ok(pe);
     }
 
+    // obtener los horarios de ramos inscritos
+    @GetMapping("/getHorariosInscribir")
+    public ResponseEntity<List<Horario>> obtenerHorariosInscribir(){
+        List<Horario> h = planEstudioService.obtenerHorariosInscribir();
+        if(h == null){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(h);
+    }
+
+
+
 
 
 

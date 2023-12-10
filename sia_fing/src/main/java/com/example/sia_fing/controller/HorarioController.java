@@ -13,7 +13,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "false")
+@CrossOrigin(origins = "*")
 @RequestMapping("/horario")
 public class HorarioController {
 
@@ -29,6 +29,7 @@ public class HorarioController {
         return ResponseEntity.ok(h);
     }
 
+
     @PostMapping("/deleteAll")
     public ResponseEntity<List<Horario>> eliminarHorarios(){
         horarioService.eliminarHorarios();
@@ -37,7 +38,7 @@ public class HorarioController {
     }
 
     @GetMapping("/getHorarios/{cod_asig}/{seccion}")
-    public ResponseEntity<Horario> getHorarios(@PathVariable("cod_asig") Integer cod_asig,
+    public ResponseEntity<Horario> getHorario(@PathVariable("cod_asig") Integer cod_asig,
                                                @PathVariable("seccion") String seccion){
 
         Horario h = horarioService.obtenerHorario(cod_asig, seccion);
@@ -46,6 +47,7 @@ public class HorarioController {
         }
         return ResponseEntity.ok(h);
     }
+
 
 
     // crea el horario

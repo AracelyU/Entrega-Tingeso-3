@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import {useFetch} from "./useFetch";
 import Swal from 'sweetalert2';
 import ramoService from "../service/RamoService";
+import {Button, Modal} from "react-bootstrap";
 
 
 const styles = {
@@ -38,6 +39,11 @@ export default function InscriptionRamo() {
         seccion: "",
         nom_asig: "",
     };
+
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = () => setShowModal(false);
+    const handleShowModal = () => setShowModal(true);
 
     const [input, setInput] = useState(initialState);
     const [cuposData, setCuposData] = useState([]);
@@ -80,10 +86,13 @@ export default function InscriptionRamo() {
     }, [ramosData, ramosLoading, selectedPlan]);
 
     const handleMostrarSecciones = (ramo) => {
-        setInput(prevInput => ({...prevInput, cod_asig: ramo.cod_asig, nom_asig: ramo.nom_asig}));
+        setInput(prevInput => ({ ...prevInput, cod_asig: ramo.cod_asig, nom_asig: ramo.nom_asig }));
         setSelectedPlan(null);
         setSelectedPlan(ramo);
+        setShowModal(true);
     };
+
+
 
 
     const mostrarError = (campoFaltante) => {
@@ -125,6 +134,8 @@ export default function InscriptionRamo() {
                 },
             })
 
+            setShowModal(false);
+
         });
 
     };
@@ -133,37 +144,85 @@ export default function InscriptionRamo() {
         <div>
             <Navbar />
             <br></br>
-            <div className="container">
+            <div className="split-container">
                 {/* Lado Izquierdo */}
                 <div className="leftSection">
                     <h2>Inscripción de asignaturas 2024/01</h2>
                     {ramosError && <li>Error: {ramosError}</li>}
                     {ramosLoading && <h2>Cargando Información de Asignaturas...</h2>}
-                    {ramosData &&
-                        ramosData.map((plan) => (
-                            <div key={plan.cod_asig} className="planInfo" style={{ display: 'grid', gridTemplateColumns: 'auto auto', alignItems: 'center' }}>
-                                <div className="infoContainer">
-                                    <div>Codigo: {plan.cod_asig}</div>
-                                    <div>Nivel: {plan.nivel}</div>
-                                    <div>Nombre asignatura: {plan.nom_asig}</div>
-                                </div>
-                                <div className="buttonContainer">
-                                    <button onClick={() => handleMostrarSecciones(plan)}>
-                                        Mostrar Secciones
-                                    </button>
-                                </div>
-                            </div>
-
-                        ))}
+                    {ramosData && (
+                        <div>
+                            {ramosData.map((plan, index) => (
+                                index % 2 === 0 && ( // Renderizar solo las asignaturas en índices pares en el lado izquierdo
+                                    <div
+                                        key={plan.cod_asig}
+                                        className="planInfo"
+                                        style={{
+                                            display: 'grid',
+                                            gridTemplateColumns: 'auto auto',
+                                            alignItems: 'center',
+                                            marginBottom: '20px',
+                                        }}
+                                    >
+                                        <div className="infoContainer">
+                                            <div>Codigo: {plan.cod_asig}</div>
+                                            <div>Nombre asignatura: {plan.nom_asig}</div>
+                                            <div>Nivel: {plan.nivel}</div>
+                                        </div>
+                                        <div className="buttonContainer">
+                                            <button onClick={() => handleMostrarSecciones(plan)}>Mostrar Secciones</button>
+                                        </div>
+                                    </div>
+                                )
+                            ))}
+                        </div>
+                    )}
                 </div>
+
 
                 {/* Lado Derecho */}
                 <div className="rightSection">
-                    {!selectedPlan &&
-                        <h5>* Seleccione una asignatura</h5>
-                    }
+                    {ramosData && (
+                        <div>
+                            <br></br><br></br>
+                            {ramosData.map((plan, index) => (
+                                index % 2 !== 0 && ( // Renderizar solo las asignaturas en índices impares en el lado derecho
+                                    <div
+                                        key={plan.cod_asig}
+                                        className="planInfo"
+                                        style={{
+                                            display: 'white',
+                                            gridTemplateColumns: 'auto auto',
+                                            alignItems: 'center',
+                                            marginBottom: '20px',
+                                        }}
+                                    >
+                                        <div className="infoContainer">
+                                            <div>Codigo: {plan.cod_asig}</div>
+                                            <div>Nombre asignatura: {plan.nom_asig}</div>
+                                            <div>Nivel: {plan.nivel}</div>
+                                        </div>
+                                        <div className="buttonContainer">
+                                            <button onClick={() => handleMostrarSecciones(plan)}>Mostrar Secciones</button>
+                                        </div>
+                                    </div>
+                                )
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            {/* Modal para la información de la sección */}
+            <Modal show={showModal} onHide={handleCloseModal}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Información de Sección</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {/* Contenido del modal, puedes mostrar aquí la información de la sección seleccionada */}
+                    {!selectedPlan && <h5>* Cargando Secciones...</h5>}
                     {selectedPlan && (
-                        <div style={{marginLeft: '0.5cm'}}>
+                        <div style={{ marginLeft: '0.5cm' }}>
                             <h3>Información de Secciones</h3>
                             <div className="seccionInfo">
                                 <h5>{input.nom_asig}</h5>
@@ -179,8 +238,18 @@ export default function InscriptionRamo() {
                             </div>
                         </div>
                     )}
-                </div>
-            </div>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseModal}>
+                        Cerrar
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+
+
+
+
         </div>
     );
 }

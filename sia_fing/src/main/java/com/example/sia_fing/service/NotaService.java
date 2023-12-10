@@ -42,12 +42,21 @@ public class NotaService {
     /*
     obtener nota de un ramo según su código de asignatura (ayuda a verificar si cumple prerrequisitos)
      */
-    public Float obtenerNotaDeRamo(Integer cod_asig){
+    public Nota obtenerNotaDeRamo(Integer cod_asig){
         EstudiantePrincipal e = estudiantePrincipalService.obtenerEstudiantePrincipal();
         if(e == null){
             return null;
         }
         return notaRepository.NotaByCod_asig(cod_asig, e.getRut());
+    }
+
+    // obtener ramos inscritos
+    public List<Nota> ramosInscritos(){
+        EstudiantePrincipal e = estudiantePrincipalService.obtenerEstudiantePrincipal();
+        if(e == null){
+            return null;
+        }
+        return notaRepository.ramosInscritosNull(e.getRut());
     }
 
     /*

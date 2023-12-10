@@ -176,17 +176,17 @@ export default function Malla() {
                     {!data && (
                         <h2>Espere a que se carguen todos los datos de la carrera</h2>
                     )}
-
-
                     {data && (
                         <h4>Malla Curricular: {data.nom_carr} </h4>
                     )}
-                    {renderTable()}
+                    {!ramos && (
+                        <h2>Buscando información de asignaturas...</h2>
+                    )}
+                    {ramos && (
+                        renderTable()
+                    )}
+
                 </div>
-
-
-
-
             </div>
 
 

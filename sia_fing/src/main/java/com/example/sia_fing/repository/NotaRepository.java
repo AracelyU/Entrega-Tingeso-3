@@ -15,8 +15,8 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
         /*
         obtener la nota de un ramo
          */
-        @Query("SELECT n.nota FROM Nota n WHERE n.rut =:rut AND n.cod_asig =:cod_asig")
-        Float NotaByCod_asig(@Param("cod_asig") Integer cod_asig, @Param("rut") String rut);
+        @Query("SELECT n FROM Nota n WHERE n.rut =:rut AND n.cod_asig =:cod_asig")
+        Nota NotaByCod_asig(@Param("cod_asig") Integer cod_asig, @Param("rut") String rut);
 
         /*
         obtener la cantidad de ramos inscritos de un estudiante por año y semestre señalado
@@ -38,6 +38,10 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
         // obtener los ramos dados y aprobados
         @Query("SELECT n FROM Nota n WHERE n.rut=:rut AND n.nota >= 4")
         List<Nota> ramosAprobados(@Param("rut") String rut);
+
+        // obtener los ramos inscritos
+        @Query("SELECT n FROM Nota n WHERE n.rut=:rut AND n.nota is null")
+        List<Nota> ramosInscritosNull(@Param("rut") String rut);
 
 
         /*

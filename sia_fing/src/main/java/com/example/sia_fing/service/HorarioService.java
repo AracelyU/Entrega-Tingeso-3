@@ -119,6 +119,7 @@ public class HorarioService {
             return null;
         }
 
+        // mejor verlo desde el frontend
         // verificar que no se genere tope entre los horarios de las asignaturas del mismo estudiante
         // esto viendo que para todos los horarios registrados de los cursos del estudiante no
         // se este ocupando el mismo módulo
@@ -133,12 +134,15 @@ public class HorarioService {
         Horario horario = obtenerHorario(cod_asig, seccion);
 
         if(horario == null){  // se crea nuevo horario
+            System.out.println("Se tuvo que crear nuevo horario para :" + cod_asig);
             Horario h = new Horario();
             h.setCod_asig(cod_asig);
             h.setSeccion(seccion);
             horarioRepository.save(h);
             return h;
         }
+
+        System.out.println("Encontro el horario de " + cod_asig);
 
         // de lo contrario ya existe un horario para esa asignatura y se necesita actualizar
         switch (modulo){

@@ -15,6 +15,7 @@ import { IoMdPerson } from "react-icons/io";
 import { FaRegCalendarDays } from "react-icons/fa6";
 import { GiArchiveRegister } from "react-icons/gi";
 import { IoMdHelpCircleOutline } from "react-icons/io"
+import { MdOutlineGridOn } from "react-icons/md";
 
 
 const Navbar = () => {
@@ -79,7 +80,7 @@ const Navbar = () => {
                         <MenuItem>
                             <MenuItemLink onClick={navigateMalla}>
                                 <div>
-                                    <IoMdPerson />
+                                    <MdOutlineGridOn />
                                     Malla
                                 </div>
                             </MenuItemLink>

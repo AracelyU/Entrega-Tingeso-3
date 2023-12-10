@@ -1,10 +1,12 @@
 package com.example.sia_fing.service;
 
 import com.example.sia_fing.entity.EstudiantePrincipal;
+import com.example.sia_fing.entity.Horario;
 import com.example.sia_fing.entity.Nota;
 import com.example.sia_fing.entity.PlanEstudio;
 import com.example.sia_fing.repository.PlanEstudioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -23,6 +25,9 @@ public class PlanEstudioService {
 
     @Autowired
     PrerrequisitoService prerrequisitoService;
+
+    @Autowired
+    HorarioService horarioService;
 
     public List<PlanEstudio> obtenerPlanEstudios(){
         return planEstudioRepository.findAll();
@@ -72,34 +77,47 @@ public class PlanEstudioService {
         return ramosInscribir;
     }
 
+    // obtener los horarios de los ramos que tiene inscrito
+    public List<Horario> obtenerHorariosInscribir(){
+        List<Nota> ramos = notaService.ramosInscritos();
+        List<Horario> h = new ArrayList<>();
+        for(Nota n : ramos){
+            Horario horario = horarioService.obtenerHorario(n.getCod_asig(), n.getSeccion());
+            if(horario != null){
+                h.add(horario);
+            }
+        }
+        return h;
+    }
+
     /*
 verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un ramo)
 */
     public Integer verificarPrerrequisitos(Integer cod_asig){
 
-        Float nota_cod_asig = notaService.obtenerNotaDeRamo(cod_asig);
+        Nota nota = notaService.obtenerNotaDeRamo(cod_asig);
 
-        if(nota_cod_asig != null){ // significa que el ramo ya lo diste
+        if(nota != null){ // significa que el ramo ya lo diste
             return -3;
         }
 
         // obtener los prerrequisitos de una carrera
         List<Integer> codigos_prerrequisitos = prerrequisitoService.obtenerPrerrequisitos(cod_asig);
         if(codigos_prerrequisitos.isEmpty()){
-            System.out.println("No hay prerrequisitos para este ramo: " + cod_asig);
+            //System.out.println("No hay prerrequisitos para este ramo: " + cod_asig);
             return -2; // no se encontraron prerrequisitos para este ramo
         }
 
         for(Integer c : codigos_prerrequisitos){
             // verificar si la nota de cada prerrequisitos existe y es mayor a 4
-            Float nota = notaService.obtenerNotaDeRamo(c);
+            Nota n = notaService.obtenerNotaDeRamo(c);
 
-            if(nota == null){
-                System.out.println("No esta registrado a ese ramo: " + cod_asig);
+            if(n == null){
+                //System.out.println("No esta registrado a ese ramo: " + cod_asig);
                 return -1; // no esta registrado a ese ramo
             }
 
-            if(nota < 4){
+            if(n.getNota() < 4){
                 //System.out.println("No paso este ramo: " + cod_asig);
                 return 0; // no paso el ramo
             }
@@ -163,6 +181,10 @@ verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un 
         notaService.guardarNota(inscribir);
         return inscribir;
     }
+
+
+
+
 
 
 
