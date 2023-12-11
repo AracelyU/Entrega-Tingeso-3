@@ -3,6 +3,8 @@
 .container {
     max-width: 70%; /* Establece el ancho máximo al 50% del contenedor padre */
     margin: 0 auto; /* Centra el contenedor en la página */
+    border: 2px solid #e07924; /* Agrega un borde de 2px con color #e07924 */
+    padding: 20px;
 }
 
 /* Estilo adicional para el texto si es necesario */

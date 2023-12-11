@@ -8,26 +8,6 @@ import ramoService from "../service/RamoService";
 import {Button, Modal} from "react-bootstrap";
 
 
-const styles = {
-    container: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        marginLeft: '0.5cm',
-    },
-    leftSection: {
-        width: '45%',
-    },
-    rightSection: {
-        width: '45%',
-    },
-    ramoInfo: {
-        marginBottom: '10px',
-    },
-    seccionInfo: {
-        marginBottom: '5px',
-    },
-};
-
 
 // componente para agregar un ramo
 export default function InscriptionRamo() {
@@ -38,6 +18,7 @@ export default function InscriptionRamo() {
         cod_asig: "",
         seccion: "",
         nom_asig: "",
+        textoHorario: "", // Agregado
     };
 
     const [showModal, setShowModal] = useState(false);
@@ -123,14 +104,35 @@ export default function InscriptionRamo() {
     }, []);
 
 
+    const [horariosData, setHorariosData] = useState([]);
+    const [textoHorario, setTextoHorario] = useState("");
+
     const handleMostrarSecciones = (ramo) => {
-        setInput(prevInput => ({ ...prevInput, cod_asig: ramo.cod_asig, nom_asig: ramo.nom_asig }));
         setSelectedPlan(null);
         setSelectedPlan(ramo);
         setShowModal(true);
+        setInput((prevInput) => ({ ...prevInput, cod_asig: ramo.cod_asig, nom_asig: ramo.nom_asig}));
+
+        const horarioSeleccionado = horariosData.find(
+            (horario) => horario.cod_asig === ramo.cod_asig && horario.seccion === input.seccion
+        );
+
+        setTextoHorario(horarioSeleccionado?.texto || "");
     };
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`http://localhost:8080/horario/getAll`);
+                const horariosData = await response.json();
+                setHorariosData(horariosData);
+            } catch (error) {
+                console.error('Error fetching horarios', error);
+            }
+        };
 
+        fetchData();
+    }, []);
 
 
     const mostrarError = (campoFaltante) => {
@@ -195,6 +197,14 @@ export default function InscriptionRamo() {
 
         });
 
+    };
+
+    const getTextoHorario = (codAsig, seccion) => {
+        const horarioSeleccionado = horariosData.find(
+                (horario) => horario.cod_asig === codAsig && horario.seccion === seccion
+        );
+
+        return horarioSeleccionado?.texto || "sin horario registrado";
     };
 
     return (
@@ -297,6 +307,7 @@ export default function InscriptionRamo() {
                                     <div key={seccion}>
                                         <div>{`Sección: ${seccion}`}</div>
                                         <div>{`Cupos disponibles: ${cuposData.find((data) => data.seccion === seccion)?.cupos}`}</div>
+                                        <div>{`Horario: ${getTextoHorario(input.cod_asig, seccion)}`}</div>
                                         <button onClick={() => handleInscribirRamo(input.cod_asig, seccion, input.nom_asig)}>
                                             Inscribir en esta sección
                                         </button>
