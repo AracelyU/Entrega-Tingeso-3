@@ -22,4 +22,6 @@ public interface HorarioRepository extends JpaRepository<Horario, Integer> {
 
 
 
+
+
 }

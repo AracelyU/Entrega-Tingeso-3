@@ -5,6 +5,30 @@ import Swal from 'sweetalert2';
 import Tabla from './Tabla';
 import horarioService from "../service/HorarioService";
 import {useNavigate} from "react-router-dom";
+import styled from 'styled-components';
+
+const LegendContainer = styled.div`
+  margin: 90px;
+  position: fixed;
+  bottom: 10px;
+  right: 110px;
+  display: flex;
+`;
+
+const LegendItem = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+`;
+
+const LegendColor = styled.div`
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: ${({ color }) => color};
+`;
+
+
 
 
 function CheckboxList(options) {
@@ -50,6 +74,7 @@ export default function InscriptionHorario() {
     const [selectedDia, setSelectedDia] = useState(null);
     const [selectedModulo, setSelectedModulo] = useState(null);
     const [horarioIngresado, setHorarioIngresado] = useState(false);
+
 
     // obtener todas las carreras
     useEffect(()=>{
@@ -162,20 +187,33 @@ export default function InscriptionHorario() {
             denyButtonColor: "rgb(190, 54, 54)",
 
         }).then((result) => {
+            if (result.isConfirmed) {
+                // El usuario hizo clic en "Confirmar"
+                horarioService.createHorario(input);
 
-            horarioService.createHorario(input);
+                Swal.fire({
+                    title: "Horario creado exitosamente",
+                    timer: 2000,
+                    icon: "success",
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                    },
+                });
 
-            Swal.fire({
-                title: "Horario creado exitosamente",
-                timer: 2000,
-                icon: "success",
-                timerProgressBar: true,
-                didOpen: () => {
-                    Swal.showLoading()
-                },
-            })
+                recargar();
+            } else if (result.isDenied) {
 
-            recargar();
+                Swal.fire({
+                    title: "Operación cancelada",
+                    timer: 2000,
+                    icon: "error",
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                    },
+                });
+            }
         });
 
 
@@ -280,6 +318,22 @@ export default function InscriptionHorario() {
               <div className="tabla-container">
                   <Tabla selectedDia={selectedDia} selectedModulo={selectedModulo} input={input} horarioIngresado={horarioIngresado} />
               </div>
+
+              {/* Leyenda para horario ya inscrito */}
+              {
+                  <LegendContainer>
+                      <LegendItem>
+                          <LegendColor color="#23394d" />
+                          <div>Horario ya inscrito</div>
+                      </LegendItem>
+
+                      <LegendItem>
+                          <LegendColor color="#e0702a" />
+                          <div>Horario por inscribir</div>
+                      </LegendItem>
+
+                  </LegendContainer>
+              }
 
               <br></br>
               <button className="submit" onClick={crearHorario}>Ingresar Horario</button>

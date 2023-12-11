@@ -25,11 +25,6 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
         Integer numeroRamos(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
 
 
-        // obtener los ramos inscritos en el anio y semestre de un estudiante
-        @Query("SELECT n FROM Nota n WHERE n.rut=:rut AND n.anio=:anio AND n.semestre=:semestre")
-        List<Nota> ramosInscritos(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
-
-
         // obtener los ramos dados y reprobados
         @Query("SELECT n FROM Nota n WHERE n.rut=:rut AND n.anio!=:anio AND n.semestre!=:semestre AND n.nota < 4")
         List<Nota> ramosReprobados(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
@@ -51,16 +46,10 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
         Integer nroVecesQueDioUnRamo(@Param("rut") String rut, @Param("cod_asig") Integer cod_asig);
 
 
-        /*
-        obtener los codigos de los ramos inscritos de un estudiante por año y semestre señalado
-         */
-        @Query("SELECT n.cod_asig FROM Nota n WHERE n.rut=:rut AND n.anio=:anio AND n.semestre=:semestre")
-        List<Integer> RamosAnioSemestre(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("rut") String rut);
-
 
         // contar cuantos alumno hay por anio, semestre y seccion de una asignatura
-        @Query("SELECT count(*) FROM Nota n WHERE n.seccion =:seccion AND n.anio=:anio AND n.semestre=:semestre AND n.cod_asig =:cod_asig")
-        Integer nroInscritos(@Param("anio") Integer anio, @Param("semestre") Integer semestre, @Param("seccion") String seccion, @Param("cod_asig") Integer cod_asig);
+        @Query("SELECT count(*) FROM Nota n WHERE n.seccion =:seccion AND n.cod_asig =:cod_asig AND n.nota is null")
+        Integer nroInscritos(@Param("seccion") String seccion, @Param("cod_asig") Integer cod_asig);
 
 
 }

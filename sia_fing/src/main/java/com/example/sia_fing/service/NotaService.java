@@ -80,24 +80,6 @@ public class NotaService {
         return 0; // reprobación de la asignatura
     }
 
-    /*
-    obtiene los codigos de las asignaturas que esta dando el estudiante
-     */
-    public List<Integer> ramosAnioSemestre(Integer anio, Integer semestre){
-        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
-        if(ep == null){
-            return null; // no hay estudiante registrado
-        }
-        return notaRepository.RamosAnioSemestre(anio, semestre, ep.getRut());
-    }
-
-
-    /*
-    obtener los ramos inscritos
-     */
-    public List<Nota> ramosInscritos(String rut, Integer anio, Integer semestre){
-        return notaRepository.ramosInscritos(anio, semestre, rut);
-    }
 
     /*
     obtener ramos reprobados
@@ -128,8 +110,8 @@ public class NotaService {
     }
 
     // contar cuantos alumnos de la sección, anio y semestre estan inscritos
-    public Integer nroInscritos(Integer cod_asig, Integer anio, Integer semestre, String seccion){
-        return notaRepository.nroInscritos(anio, semestre, seccion, cod_asig);
+    public Integer nroInscritos(Integer cod_asig, String seccion){
+        return notaRepository.nroInscritos(seccion, cod_asig);
     }
 
 

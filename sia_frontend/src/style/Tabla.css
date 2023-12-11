@@ -6,12 +6,14 @@
 table {
     border-collapse: collapse;
     margin-top: 20px;
+    width: 100%; /* O el ancho deseado */
 }
 
 th, td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
+    width: 100px; /* O el ancho deseado para todas las celdas */
 }
 
 /* Establecer un ancho específico para la primera columna */

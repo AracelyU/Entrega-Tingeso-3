@@ -33,10 +33,6 @@ public class PlanEstudioController {
     @Autowired
     EstudiantePrincipalService estudiantePrincipalService;
 
-    @Autowired
-    HorarioService horarioService;
-
-
     @GetMapping("/getAll")   // mostrar todos los ramos
     public ResponseEntity<List<PlanEstudio>> obtenerRamos(){
         List<PlanEstudio> p = planEstudioService.obtenerPlanEstudios();
@@ -71,16 +67,6 @@ public class PlanEstudioController {
         return ResponseEntity.ok(p);
     }
 
-    // enviar secciones disponibles de cursos
-    // esto para el momento de inscribir un ramo eligas la sección
-    @GetMapping("/getSecciones")
-    public ResponseEntity<List<String>> obtenerSecciones(){
-        List<String> lista = new ArrayList<>();
-        lista.add("A-1");
-        lista.add("B-2");
-        lista.add("C-3");
-        return ResponseEntity.ok(lista);
-    }
 
     // obtener los ramos que puede y le tocan tomar
     @GetMapping("/getRamosTomar")
@@ -89,18 +75,6 @@ public class PlanEstudioController {
         return ResponseEntity.ok(pe);
     }
 
-    // obtener los horarios de ramos inscritos
-    @GetMapping("/getHorariosInscribir")
-    public ResponseEntity<List<Horario>> obtenerHorariosInscribir(){
-        List<Horario> h = planEstudioService.obtenerHorariosInscribir();
-        if(h == null){
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(h);
-    }
-
-
-
 
 
 
@@ -108,15 +82,17 @@ public class PlanEstudioController {
     @GetMapping("/getCupos/{cod_asig}/{seccion}")
     public ResponseEntity<Integer> cuposDisponibles(@PathVariable("cod_asig") Integer cod_asig,
                                                     @PathVariable("seccion") String seccion){
-        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
-        if(ep == null){
-            return ResponseEntity.noContent().build();
-        }
 
-        Integer nroInscritos = 50 - notaService.nroInscritos(cod_asig, ep.getAnio(), ep.getSemestre(), seccion );
+        Integer nroInscritos = 50 - notaService.nroInscritos(cod_asig, seccion );
         return ResponseEntity.ok(nroInscritos);
     }
 
+    // obtener nombre de la asignatura por cod_asig
+    @GetMapping("/getNombre/{cod_asig}")
+    public ResponseEntity<String> obtenerNombreAsig(@PathVariable("cod_asig") Integer cod_asig){
+        String nombre = planEstudioService.nombreRamo(cod_asig);
+        return ResponseEntity.ok(nombre);
+    }
 
     // para inscribir un ramo
     // esto para el momento que hayas escogido sección
@@ -127,9 +103,6 @@ public class PlanEstudioController {
         if(ep == null){
             return ResponseEntity.noContent().build();
         }
-
-        // se crea su horario asociado
-        horarioService.crearHorario(cod_asig, seccion);  // un horario es solo a una asignatura y tiene un solo curso
 
         Nota n = planEstudioService.inscribirRamo(seccion, cod_asig, ep.getAnio(), ep.getSemestre());
         System.out.println("se ingreso el ramo correctamente");

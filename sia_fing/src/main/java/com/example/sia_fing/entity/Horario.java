@@ -22,25 +22,26 @@ public class Horario {
     int id;
 
     @ElementCollection
-    List<Integer> modulo1 = Arrays.asList(0, 0, 0, 0, 0, 0, 0);
+    List<Integer> modulo1 = Arrays.asList(0, 0, 0, 0, 0, 0);
 
     @ElementCollection
-    List<Integer> modulo2 = Arrays.asList(0, 0, 0, 0, 0, 0, 0);
+    List<Integer> modulo2 = Arrays.asList(0, 0, 0, 0, 0, 0);
 
     @ElementCollection
-    List<Integer> modulo3 = Arrays.asList(0, 0, 0, 0, 0, 0, 0);
+    List<Integer> modulo3 = Arrays.asList(0, 0, 0, 0, 0, 0);
 
     @ElementCollection
-    List<Integer> modulo4 = Arrays.asList(0, 0, 0, 0, 0, 0, 0);
+    List<Integer> modulo4 = Arrays.asList(0, 0, 0, 0, 0, 0);
 
     @ElementCollection
-    List<Integer> modulo5 = Arrays.asList(0, 0, 0, 0, 0, 0, 0);
+    List<Integer> modulo5 = Arrays.asList(0, 0, 0, 0, 0, 0);
 
     @ElementCollection
-    List<Integer> modulo6 = Arrays.asList(0, 0, 0, 0, 0, 0, 0);
+    List<Integer> modulo6 = Arrays.asList(0, 0, 0, 0, 0, 0);
 
     Integer cod_asig; // una asignatura se enlaza a un horario
-
+    String nom_asig;
+    Integer cupos;
     String seccion;
 
 }

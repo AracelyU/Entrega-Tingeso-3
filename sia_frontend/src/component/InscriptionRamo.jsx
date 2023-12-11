@@ -48,6 +48,8 @@ export default function InscriptionRamo() {
     const [input, setInput] = useState(initialState);
     const [cuposData, setCuposData] = useState([]);
     const [selectedPlan, setSelectedPlan] = useState(null);
+    const [nroRamos, setNroRamos] = useState(null);
+    const [estadoTope, setEstadoTope] = useState(null);
 
     useEffect(() => {
         // Obtener cupos para cada ramo y sección
@@ -85,6 +87,42 @@ export default function InscriptionRamo() {
 
     }, [ramosData, ramosLoading, selectedPlan]);
 
+
+    // obtener el número de ramos
+    useEffect(() => {
+        const fetchNroRamos = async () => {
+            try {
+                const response = await fetch("http://localhost:8080/nota/nroRamosInscritos");
+                const data = await response.json();
+                setNroRamos(data);
+            } catch (error) {
+                console.error('Error al obtener el número de ramos:', error);
+                // Manejar el error según sea necesario
+            }
+        };
+
+        fetchNroRamos();
+    }, []);
+
+
+    useEffect(() => {
+        const fetchEstadoTope = async () => {
+            if(input.seccion && input.cod_asig) {
+                try {
+                    const response = await fetch(`http://localhost:8080/horario/verTope/${input.cod_asig}/${input.seccion}`);
+                    const data = await response.json();
+                    setEstadoTope(data);
+                } catch (error) {
+                    console.error('Error al obtener estadoTope:', error);
+                    // Manejar el error según sea necesario
+                }
+            }
+        };
+
+        fetchEstadoTope();
+    }, []);
+
+
     const handleMostrarSecciones = (ramo) => {
         setInput(prevInput => ({ ...prevInput, cod_asig: ramo.cod_asig, nom_asig: ramo.nom_asig }));
         setSelectedPlan(null);
@@ -105,9 +143,12 @@ export default function InscriptionRamo() {
     };
 
     const handleInscribirRamo = (cod_asig, seccion, nom_asig) => {
-        //console.log(`Inscribir ramo: ${cod_asig} - ${seccion} - ${nom_asig}`);
+        // console.log(`Inscribir ramo: ${cod_asig} - ${seccion} - ${nom_asig}`);
 
-        const mensaje = `¿Desea inscribirse a la asignatura ${nom_asig} sección ${seccion}?`;
+        // Colocar la sección en input.seccion
+        setInput((prevInput) => ({ ...prevInput, seccion }));
+
+        const mensaje = `¿Desea inscribirse a la asignatura ${input.nom_asig} sección ${input.seccion}?`;
 
         Swal.fire({
             title: mensaje,
@@ -121,20 +162,36 @@ export default function InscriptionRamo() {
 
         }).then((result) => {
 
-            ramoService.inscribirRamo(cod_asig, seccion);
+            if (result.isConfirmed) {
+                ramoService.inscribirRamo(cod_asig, seccion);
 
-            const mensaje = `Se ha incrito ramo ${nom_asig} sección ${seccion}`
-            Swal.fire({
-                title: mensaje,
-                timer: 2000,
-                icon: "success",
-                timerProgressBar: true,
-                didOpen: () => {
-                    Swal.showLoading()
-                },
-            })
+                const mensaje = `Se ha incrito ramo ${nom_asig} sección ${seccion}`
+                Swal.fire({
+                    title: mensaje,
+                    timer: 2000,
+                    icon: "success",
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                    },
+                })
 
-            setShowModal(false);
+                setShowModal(false);
+
+            } else if (result.isDenied) {
+
+                Swal.fire({
+                    title: "Operación cancelada",
+                    timer: 2000,
+                    icon: "error",
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                    },
+                });
+            }
+
+
 
         });
 
@@ -144,74 +201,84 @@ export default function InscriptionRamo() {
         <div>
             <Navbar />
             <br></br>
-            <div className="split-container">
-                {/* Lado Izquierdo */}
-                <div className="leftSection">
-                    <h2>Inscripción de asignaturas 2024/01</h2>
-                    {ramosError && <li>Error: {ramosError}</li>}
-                    {ramosLoading && <h2>Cargando Información de Asignaturas...</h2>}
-                    {ramosData && (
-                        <div>
-                            {ramosData.map((plan, index) => (
-                                index % 2 === 0 && ( // Renderizar solo las asignaturas en índices pares en el lado izquierdo
-                                    <div
-                                        key={plan.cod_asig}
-                                        className="planInfo"
-                                        style={{
-                                            display: 'grid',
-                                            gridTemplateColumns: 'auto auto',
-                                            alignItems: 'center',
-                                            marginBottom: '20px',
-                                        }}
-                                    >
-                                        <div className="infoContainer">
-                                            <div>Codigo: {plan.cod_asig}</div>
-                                            <div>Nombre asignatura: {plan.nom_asig}</div>
-                                            <div>Nivel: {plan.nivel}</div>
+            {nroRamos < 7 && (
+                <div className="split-container">
+                    {/* Lado Izquierdo */}
+                    <div className="leftSection">
+                        <h2>Inscripción de asignaturas 2024/01</h2>
+                        {ramosError && <li>Error: {ramosError}</li>}
+                        {ramosLoading && <h2>Cargando Información de Asignaturas...</h2>}
+                        {ramosData && (
+                            <div>
+                                {ramosData.map((plan, index) => (
+                                    index % 2 === 0 && ( // Renderizar solo las asignaturas en índices pares en el lado izquierdo
+                                        <div
+                                            key={plan.cod_asig}
+                                            className="planInfo"
+                                            style={{
+                                                display: 'grid',
+                                                gridTemplateColumns: 'auto auto',
+                                                alignItems: 'center',
+                                                marginBottom: '20px',
+                                            }}
+                                        >
+                                            <div className="infoContainer">
+                                                <div>Codigo: {plan.cod_asig}</div>
+                                                <div>Nombre asignatura: {plan.nom_asig}</div>
+                                                <div>Nivel: {plan.nivel}</div>
+                                            </div>
+                                            <div className="buttonContainer">
+                                                <button onClick={() => handleMostrarSecciones(plan)}>Mostrar Secciones</button>
+                                            </div>
                                         </div>
-                                        <div className="buttonContainer">
-                                            <button onClick={() => handleMostrarSecciones(plan)}>Mostrar Secciones</button>
-                                        </div>
-                                    </div>
-                                )
-                            ))}
-                        </div>
-                    )}
-                </div>
+                                    )
+                                ))}
+                            </div>
+                        )}
+                    </div>
 
 
-                {/* Lado Derecho */}
-                <div className="rightSection">
-                    {ramosData && (
-                        <div>
-                            <br></br><br></br>
-                            {ramosData.map((plan, index) => (
-                                index % 2 !== 0 && ( // Renderizar solo las asignaturas en índices impares en el lado derecho
-                                    <div
-                                        key={plan.cod_asig}
-                                        className="planInfo"
-                                        style={{
-                                            display: 'white',
-                                            gridTemplateColumns: 'auto auto',
-                                            alignItems: 'center',
-                                            marginBottom: '20px',
-                                        }}
-                                    >
-                                        <div className="infoContainer">
-                                            <div>Codigo: {plan.cod_asig}</div>
-                                            <div>Nombre asignatura: {plan.nom_asig}</div>
-                                            <div>Nivel: {plan.nivel}</div>
+                    {/* Lado Derecho */}
+                    <div className="rightSection">
+                        <h2>
+                            Limite de asignaturas por inscribir: {6 - nroRamos}
+                        </h2>
+                        {ramosData && (
+                            <div>
+                                {ramosData.map((plan, index) => (
+                                    index % 2 !== 0 && ( // Renderizar solo las asignaturas en índices impares en el lado derecho
+                                        <div
+                                            key={plan.cod_asig}
+                                            className="planInfo"
+                                            style={{
+                                                display: 'white',
+                                                gridTemplateColumns: 'auto auto',
+                                                alignItems: 'center',
+                                                marginBottom: '20px',
+                                            }}
+                                        >
+                                            <div className="infoContainer">
+                                                <div>Codigo: {plan.cod_asig}</div>
+                                                <div>Nombre asignatura: {plan.nom_asig}</div>
+                                                <div>Nivel: {plan.nivel}</div>
+                                            </div>
+                                            <div className="buttonContainer">
+                                                <button onClick={() => handleMostrarSecciones(plan)}>Mostrar Secciones</button>
+                                            </div>
                                         </div>
-                                        <div className="buttonContainer">
-                                            <button onClick={() => handleMostrarSecciones(plan)}>Mostrar Secciones</button>
-                                        </div>
-                                    </div>
-                                )
-                            ))}
-                        </div>
-                    )}
+                                    )
+                                ))}
+                            </div>
+                        )}
+                    </div>
                 </div>
-            </div>
+
+            )}
+            {nroRamos > 6 && (
+                <h2> Has alcanzado el limite de asignaturas a la que puedes inscribir.
+                </h2>
+
+            )}
 
             {/* Modal para la información de la sección */}
             <Modal show={showModal} onHide={handleCloseModal}>

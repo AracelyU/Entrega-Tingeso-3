@@ -4,6 +4,7 @@ package com.example.sia_fing.controller;
 import com.example.sia_fing.entity.Horario;
 import com.example.sia_fing.entity.PlanEstudio;
 import com.example.sia_fing.service.HorarioService;
+import com.example.sia_fing.service.PlanEstudioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.env.RandomValuePropertySourceEnvironmentPostProcessor;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,16 @@ public class HorarioController {
     @Autowired
     HorarioService horarioService;
 
+    // obtener los horarios de ramos inscritos
+    @GetMapping("/getHorariosInscribir")
+    public ResponseEntity<List<Horario>> obtenerHorariosInscribir(){
+        List<Horario> h = horarioService.obtenerHorariosInscribir();
+        if(h == null){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(h);
+    }
+
     @GetMapping("/getAll")   // mostrar todos los horarios
     public ResponseEntity<List<Horario>> obtenerHorarios(){
         List<Horario> h = horarioService.obtenerHorarios();
@@ -27,6 +38,15 @@ public class HorarioController {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(h);
+    }
+
+    // verifica si hay tope
+    @GetMapping("/verTope/{cod_asig}/{seccion}")
+    public ResponseEntity<Integer> verTope(@PathVariable("cod_asig") Integer cod_asig,
+                                           @PathVariable("seccion") String seccion){
+        Integer op = horarioService.verificarTope(cod_asig, seccion);
+        System.out.println("estado tope: " + op);
+        return ResponseEntity.ok(op);
     }
 
 

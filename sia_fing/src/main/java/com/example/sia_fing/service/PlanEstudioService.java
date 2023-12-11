@@ -26,8 +26,6 @@ public class PlanEstudioService {
     @Autowired
     PrerrequisitoService prerrequisitoService;
 
-    @Autowired
-    HorarioService horarioService;
 
     public List<PlanEstudio> obtenerPlanEstudios(){
         return planEstudioRepository.findAll();
@@ -77,18 +75,7 @@ public class PlanEstudioService {
         return ramosInscribir;
     }
 
-    // obtener los horarios de los ramos que tiene inscrito
-    public List<Horario> obtenerHorariosInscribir(){
-        List<Nota> ramos = notaService.ramosInscritos();
-        List<Horario> h = new ArrayList<>();
-        for(Nota n : ramos){
-            Horario horario = horarioService.obtenerHorario(n.getCod_asig(), n.getSeccion());
-            if(horario != null){
-                h.add(horario);
-            }
-        }
-        return h;
-    }
+
 
     /*
 verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un ramo)
@@ -97,7 +84,7 @@ verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un 
 
         Nota nota = notaService.obtenerNotaDeRamo(cod_asig);
 
-        if(nota != null){ // significa que el ramo ya lo diste
+        if(nota != null){ // significa que el ramo ya lo diste de alguna forma
             return -3;
         }
 
@@ -117,7 +104,7 @@ verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un 
                 return -1; // no esta registrado a ese ramo
             }
 
-            if(n.getNota() < 4){
+            if(n.getNota() != null && n.getNota() < 4){
                 //System.out.println("No paso este ramo: " + cod_asig);
                 return 0; // no paso el ramo
             }
@@ -153,6 +140,10 @@ verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un 
     }
 
 
+    //  obtener nombre de un ramo por cod_asig
+    public String nombreRamo(Integer cod_asig){
+        return planEstudioRepository.findNombreByCod_asig(cod_asig);
+    }
 
 
     // inscribir un alumno a un ramo
@@ -163,7 +154,7 @@ verificar que se cumplen los prerrequisitos de un ramo (para poder inscribir un 
         }
 
         // verificar si es puede inscribir por cupos
-        Integer nroInscritos = notaService.nroInscritos(cod_asig, anio, semestre, seccion);
+        Integer nroInscritos = notaService.nroInscritos(cod_asig, seccion);
         Integer cupos = planEstudioRepository.obtenerCupos(cod_asig);  // ver porque esto sale null
 
         if(nroInscritos > 50){

@@ -58,11 +58,7 @@ public class NotaController {
 
     @GetMapping("/ramosInscritos")
     public ResponseEntity<List<Nota>> ramosInscrito(){
-        EstudiantePrincipal ep = estudiantePrincipalService.obtenerEstudiantePrincipal();
-        if(ep == null){
-            return ResponseEntity.noContent().build();
-        }
-        List<Nota> inscritos = notaService.ramosInscritos(ep.getRut(), ep.getAnio(), ep.getSemestre());
+        List<Nota> inscritos = notaService.ramosInscritos();
         if(inscritos == null){
             return ResponseEntity.noContent().build();
         }

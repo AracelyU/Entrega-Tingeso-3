@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, {Suspense, useEffect, useState} from 'react';
 import Navbar from "./Navbar";
 import { fetchData } from "./fetchData"
 import Malla from "./Malla";
@@ -7,6 +7,23 @@ import "../style/PerfilEstudiante.css"
 
 export default function PerfilEstudiante() {
     const {data, loading, error} = useFetch("http://localhost:8080/estudiantePrincipal/getEstudiante")
+
+    const [nroRamos, setNroRamos] = useState(null);
+
+    useEffect(() => {
+        const fetchNroRamos = async () => {
+            try {
+                const response = await fetch("http://localhost:8080/nota/nroRamosInscritos");
+                const data = await response.json();
+                setNroRamos(data);
+            } catch (error) {
+                console.error('Error al obtener el número de ramos:', error);
+                // Manejar el error según sea necesario
+            }
+        };
+
+        fetchNroRamos();
+    }, []);
 
     return (
         <>
@@ -26,6 +43,13 @@ export default function PerfilEstudiante() {
                             <li>Apellido: {data.apellido}</li>
                             <li>Email: {data.email}</li>
                             <li>Nivel: {data.nivel}</li>
+
+                            {nroRamos < 3 && (
+                                <li>Situación: IRREGULAR (Tiene menos de 3 asignaturas inscritas)</li>
+                            )}
+                            {nroRamos > 2 && (
+                                <li>Situación: REGULAR</li>
+                            )}
                         </ul>
                     )}
                 </div>

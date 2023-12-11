@@ -12,6 +12,11 @@ import java.util.List;
 @Repository
 public interface PlanEstudioRepository extends JpaRepository<PlanEstudio, Integer> {
 
+
+    // obtener nombre por cod_Asig
+    @Query("SELECT p.nom_asig FROM PlanEstudio p WHERE p.cod_asig =:cod_asig")
+    String findNombreByCod_asig(@Param("cod_asig") Integer cod_asig);
+
     /*
     obtener los ramos de una carrera
      */
