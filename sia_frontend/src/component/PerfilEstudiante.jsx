@@ -29,7 +29,7 @@ export default function PerfilEstudiante() {
         <>
             <Navbar />
             <br></br>
-            <h2 style={{marginLeft: '0.5cm'}}>Bienvenido a SIA-FING</h2>
+            <h2 style={{marginLeft: '0.5cm'}}>Bienvenido a SIA-FING V.1.2</h2>
             <h4 style={{marginLeft: '0.5cm'}}>Información básica</h4>
             <div id="perfil-estudiante-container">
                 <div id="perfil-estudiante-info">
@@ -54,6 +54,10 @@ export default function PerfilEstudiante() {
                     )}
                 </div>
             </div>
+            <br></br>
+            <h5 style={{marginLeft: '0.5cm'}}>* Se recomienda ir a la sección Ayuda si no sabes como comenzar</h5>
+
+
         </>
     );
 }

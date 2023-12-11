@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 
 const Container = styled(StyledContainer)`
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   padding: 20px;
 `;
 
@@ -23,6 +23,7 @@ const TableContainer = styled.div`
   width: 100%;
 `;
 
+
 const HorariosTable = styled(Table)`
   margin-bottom: 0;
   background-color: #ffffff;
@@ -31,7 +32,7 @@ const HorariosTable = styled(Table)`
   thead {
     background-color: #7fb3d5;
     
-    color: #23394d;
+    color: #ffffff;
 
 
     th {
@@ -207,6 +208,7 @@ export default function Horario() {
                                     <th>Nombre Asignatura</th>
                                     <th>Sección</th>
                                     <th>Nro Inscritos</th>
+                                    <th>Horario</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -217,6 +219,7 @@ export default function Horario() {
                                             <td>{ramo.nom_asig}</td>
                                             <td>{ramo.seccion}</td>
                                             <td>{ramo.cupos}</td>
+                                            <td>{ramo.horario}</td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -233,7 +236,13 @@ export default function Horario() {
                         </LegendContainer>
                     </div>
                 </div>
+                <br></br><br></br>
+                <h5>* Si el estudiante está inscrito a una asignatura que no tenga a lo menos un
+                horario asignado, no se verá la información en está sección</h5>
+                <br></br>
+                <br></br>
             </Container>
+
         </div>
     );
 }

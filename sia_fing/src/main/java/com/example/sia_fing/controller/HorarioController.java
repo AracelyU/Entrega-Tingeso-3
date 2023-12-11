@@ -2,6 +2,7 @@ package com.example.sia_fing.controller;
 
 
 import com.example.sia_fing.entity.Horario;
+import com.example.sia_fing.entity.Nota;
 import com.example.sia_fing.entity.PlanEstudio;
 import com.example.sia_fing.service.HorarioService;
 import com.example.sia_fing.service.PlanEstudioService;
@@ -11,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -20,6 +22,7 @@ public class HorarioController {
 
     @Autowired
     HorarioService horarioService;
+
 
     // obtener los horarios de ramos inscritos
     @GetMapping("/getHorariosInscribir")
@@ -48,6 +51,7 @@ public class HorarioController {
         System.out.println("estado tope: " + op);
         return ResponseEntity.ok(op);
     }
+
 
 
     @PostMapping("/deleteAll")

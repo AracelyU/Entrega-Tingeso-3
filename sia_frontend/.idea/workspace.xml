@@ -5,23 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2e95efd-8b6d-4efd-8ef5-cfb53d746400" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/HorarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/HorarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/NotaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/NotaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/PlanEstudioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/controller/PlanEstudioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/entity/Horario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/entity/Horario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/HorarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/HorarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/NotaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/NotaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/PlanEstudioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/repository/PlanEstudioRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/HorarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/HorarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/NotaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/NotaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/PlanEstudioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sia_fing/src/main/java/com/example/sia_fing/service/PlanEstudioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/AyudaComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/AyudaComponent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/HorarioComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/HorarioComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/InscriptionHorario.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/InscriptionHorario.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/InscriptionRamo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/InscriptionRamo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/PerfilEstudiante.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/PerfilEstudiante.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/Tabla.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/Tabla.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/Malla.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/Malla.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +75,7 @@
       <workItem from="1702231976392" duration="7021000" />
       <workItem from="1702239172635" duration="11366000" />
       <workItem from="1702258059833" duration="1135000" />
+      <workItem from="1702292897354" duration="2494000" />
     </task>
     <servers />
   </component>

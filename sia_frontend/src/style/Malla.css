@@ -1,5 +1,5 @@
 .table-container {
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .legend {
@@ -9,9 +9,9 @@
 }
 
 .legend-item {
-    padding: 5px;
+    padding: 3px;
     border: 1px solid #ccc;
-    font-size: 12px; /* Tamaño de fuente reducido */
+    font-size: 11px; /* Tamaño de fuente reducido */
 }
 
 .table {
@@ -21,14 +21,14 @@
 
 th,
 td {
-    padding: 4px; /* Padding reducido */
+    padding: 3px; /* Padding reducido */
     text-align: center;
-    font-size: 12.7px; /* Tamaño de fuente reducido */
+    font-size: 11.8px; /* Tamaño de fuente reducido */
 }
 
 .table-cell {
-    min-width: 40px; /* Ancho mínimo reducido */
-    height: 40px; /* Altura reducida */
+    min-width: 30px; /* Ancho mínimo reducido */
+    height: 30px; /* Altura reducida */
 }
 
 .legend-item {

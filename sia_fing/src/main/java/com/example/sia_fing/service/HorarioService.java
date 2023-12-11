@@ -1,10 +1,7 @@
 package com.example.sia_fing.service;
 
 
-import com.example.sia_fing.entity.Estudiante;
-import com.example.sia_fing.entity.EstudiantePrincipal;
-import com.example.sia_fing.entity.Horario;
-import com.example.sia_fing.entity.Nota;
+import com.example.sia_fing.entity.*;
 import com.example.sia_fing.repository.HorarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -244,6 +241,11 @@ public class HorarioService {
                     break;
             }
             horarioRepository.save(h);
+
+            // función que crea horario en texto
+            String texto = horarioTexto(h.getCod_asig(), h.getSeccion());
+            h.setTexto(texto);
+            horarioRepository.save(h);
             return h;
 
         }else{
@@ -275,6 +277,13 @@ public class HorarioService {
                     break;
             }
             horarioRepository.save(horario);
+
+
+            // función que crea horario en texto
+            String texto = horarioTexto(horario.getCod_asig(), horario.getSeccion());
+            horario.setTexto(texto);
+
+            horarioRepository.save(horario);
             return horario;
 
         }
@@ -282,11 +291,227 @@ public class HorarioService {
 
 
 
-    // eliminar horario especifico
-    public void eliminarHorarioEspecifico(Horario h){
-        horarioRepository.delete(h);
-    }
+// crea horario en texto
+    public String horarioTexto(Integer cod_asig, String seccion){
+        Horario h = horarioRepository.horarioEstudiante(cod_asig, seccion);
+        if (h == null) {
+            return "";
+        }
 
+        StringBuilder texto = new StringBuilder("[ ");
+
+        for(int modulo=1; modulo < 7; modulo++){
+
+            switch (modulo){
+                case 1:
+                    for(int dia=0; dia < 6; dia++){
+                        if(h.getModulo1().get(dia) == 1){
+                            switch (dia){
+                                case 0:
+                                    texto.append("L1-");
+                                    break;
+
+                                case 1:
+                                    texto.append("M1-");
+                                    break;
+
+                                case 2:
+                                    texto.append("W1-");
+                                    break;
+
+                                case 3:
+                                    texto.append("J1-");
+                                    break;
+
+                                case 4:
+                                    texto.append("V1-");
+                                    break;
+                                case 5:
+                                    texto.append("S1-");
+                                    break;
+                                default:
+                                    System.out.println("error");
+                                    break;
+                            }
+                        }
+                    }
+                    break;
+                case 2:
+                    for(int dia=0; dia < 6; dia++){
+                        if(h.getModulo2().get(dia) == 1){
+                            switch (dia){
+                                case 0:
+                                    texto.append("L2-");
+                                    break;
+
+                                case 1:
+                                    texto.append("M2-");
+                                    break;
+
+                                case 2:
+                                    texto.append("W2-");
+                                    break;
+
+                                case 3:
+                                    texto.append("J2-");
+                                    break;
+
+                                case 4:
+                                    texto.append("V2-");
+                                    break;
+                                case 5:
+                                    texto.append("S2-");
+                                    break;
+                                default:
+                                    System.out.println("error");
+                                    break;
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                    for(int dia=0; dia < 6; dia++){
+                        if(h.getModulo3().get(dia) == 1){
+                            switch (dia){
+                                case 0:
+                                    texto.append("L3-");
+                                    break;
+
+                                case 1:
+                                    texto.append("M3-");
+                                    break;
+
+                                case 2:
+                                    texto.append("W3-");
+                                    break;
+
+                                case 3:
+                                    texto.append("J3-");
+                                    break;
+
+                                case 4:
+                                    texto.append("V3-");
+                                    break;
+                                case 5:
+                                    texto.append("S3-");
+                                    break;
+                                default:
+                                    System.out.println("error");
+                                    break;
+                            }
+                        }
+                    }
+                    break;
+                case 4:
+                    for(int dia=0; dia < 6; dia++){
+                        if(h.getModulo4().get(dia) == 1){
+                            switch (dia){
+                                case 0:
+                                    texto.append("L4-");
+                                    break;
+
+                                case 1:
+                                    texto.append("M4-");
+                                    break;
+
+                                case 2:
+                                    texto.append("W4-");
+                                    break;
+
+                                case 3:
+                                    texto.append("J4-");
+                                    break;
+
+                                case 4:
+                                    texto.append("V4-");
+                                    break;
+                                case 5:
+                                    texto.append("S4-");
+                                    break;
+                                default:
+                                    System.out.println("error");
+                                    break;
+                            }
+                        }
+                    }
+                    break;
+                case 5:
+                    for(int dia=0; dia < 6; dia++){
+                        if(h.getModulo5().get(dia) == 1){
+                            switch (dia){
+                                case 0:
+                                    texto.append("L5-");
+                                    break;
+
+                                case 1:
+                                    texto.append("M5-");
+                                    break;
+
+                                case 2:
+                                    texto.append("W5-");
+                                    break;
+
+                                case 3:
+                                    texto.append("J5-");
+                                    break;
+
+                                case 4:
+                                    texto.append("V5-");
+                                    break;
+                                case 5:
+                                    texto.append("S5-");
+                                    break;
+                                default:
+                                    System.out.println("error");
+                                    break;
+                            }
+                        }
+                    }
+                    break;
+                case 6:
+                    for(int dia=0; dia < 6; dia++){
+                        if(h.getModulo6().get(dia) == 1){
+                            switch (dia){
+                                case 0:
+                                    texto.append("L6");
+                                    break;
+
+                                case 1:
+                                    texto.append("M6");
+                                    break;
+
+                                case 2:
+                                    texto.append("W6");
+                                    break;
+
+                                case 3:
+                                    texto.append("J6");
+                                    break;
+
+                                case 4:
+                                    texto.append("V6");
+                                    break;
+                                case 5:
+                                    texto.append("S6");
+                                    break;
+                                default:
+                                    System.out.println("error");
+                                    break;
+                            }
+                        }
+                    }
+                    break;
+                default:
+                    System.out.println("error");
+                    break;
+            }
+        }
+
+
+
+        return texto.toString();
+
+    }
 
 
 }

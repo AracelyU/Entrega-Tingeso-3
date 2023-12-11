@@ -42,6 +42,7 @@ public class Horario {
     Integer cod_asig; // una asignatura se enlaza a un horario
     String nom_asig;
     Integer cupos;
+    String texto;
     String seccion;
 
 }

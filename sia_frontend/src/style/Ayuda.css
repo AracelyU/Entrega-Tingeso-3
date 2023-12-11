@@ -1,0 +1,11 @@
+
+/* En tu archivo Ayuda.css o cualquier otro archivo CSS que estés utilizando */
+.container {
+    max-width: 70%; /* Establece el ancho máximo al 50% del contenedor padre */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+/* Estilo adicional para el texto si es necesario */
+h2, h3, h4, h5 {
+    color: #23394d; /* Cambia el color del texto si es necesario */
+}
