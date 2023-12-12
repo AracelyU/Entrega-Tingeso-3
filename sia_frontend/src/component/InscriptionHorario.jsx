@@ -110,11 +110,12 @@ export default function InscriptionHorario() {
     const obtenerRamos = async (event) => {
         setInput({...input, codigo_carr: event.target.value});
         const codigoCarrera = event.target.value;
+        console.log("codio: " + codigoCarrera);
 
         // obtener los ramos de una carrera
         if (codigoCarrera) {
             try {
-                const response = await fetch(`http://localhost:8080/ramo/getRamos`);
+                const response = await fetch(`http://localhost:8080/ramo/getRamos/${codigoCarrera}`);
                 const data = await response.json();
                 setRamos(data);
             } catch (error) {
@@ -124,7 +125,6 @@ export default function InscriptionHorario() {
             // Limpiar la lista de ramos si no hay una carrera seleccionada
             setRamos([]);
         }
-
 
         setHorarioIngresado(true);
     };
@@ -202,6 +202,7 @@ export default function InscriptionHorario() {
                 });
 
                 recargar();
+
             } else if (result.isDenied) {
 
                 Swal.fire({
@@ -259,7 +260,7 @@ export default function InscriptionHorario() {
                           <option value={""} disabled>Seleccione Asignatura</option>
                           {ramos.map((r) => (
                               <option key={r.id} value={r.cod_asig}>
-                                  {r.nom_asig}
+                                  Nivel {r.nivel}:  {r.nom_asig}
                               </option>
                           ))}
                       </select>
@@ -339,7 +340,7 @@ export default function InscriptionHorario() {
               <button className="submit" onClick={crearHorario}>Ingresar Horario</button>
               <br></br>
               <br></br>
-              <h5>* Esta sección es solo para un academico. Un estudiante no</h5>
+              <h5>* Esta sección es solo para un académico. Un estudiante no</h5>
               <h5>debería de poder acceder aquí normalmente.</h5>
 
           </div>

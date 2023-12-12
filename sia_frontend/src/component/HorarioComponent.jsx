@@ -163,6 +163,9 @@ export default function Horario() {
                 <div className="row">
                     <div className="col-md-6">
                         <h2>Horario 2024/01</h2>
+                        {!horariosInscribir && (
+                            <h5>Cargando Asignaturas incritas...</h5>
+                        )}
                         <TableContainer>
                             <HorariosTable striped bordered hover inscrito>
                                 <thead>
@@ -208,7 +211,6 @@ export default function Horario() {
                                     <th>Nombre Asignatura</th>
                                     <th>Sección</th>
                                     <th>Nro Inscritos</th>
-                                    <th>Horario</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -219,7 +221,6 @@ export default function Horario() {
                                             <td>{ramo.nom_asig}</td>
                                             <td>{ramo.seccion}</td>
                                             <td>{ramo.cupos}</td>
-                                            <td>{ramo.horario}</td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -237,6 +238,9 @@ export default function Horario() {
                     </div>
                 </div>
                 <br></br><br></br>
+
+
+
                 <h5>* Si el estudiante está inscrito a una asignatura que no tenga a lo menos un
                 horario asignado, no se verá la información en está sección</h5>
                 <br></br>

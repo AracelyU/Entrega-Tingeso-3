@@ -8,6 +8,6 @@
 }
 
 /* Estilo adicional para el texto si es necesario */
-h2, h3, h4, h5 {
+h2, h3, h4, h5, h6 {
     color: #23394d; /* Cambia el color del texto si es necesario */
 }

@@ -61,6 +61,16 @@ public class HorarioController {
         return ResponseEntity.ok(h);
     }
 
+    // obtener cupos de un ramo por seccion
+    @GetMapping("/getCupos/{cod_asig}/{seccion}")
+    public ResponseEntity<Integer> cuposDisponibles(@PathVariable("cod_asig") Integer cod_asig,
+                                                    @PathVariable("seccion") String seccion){
+        System.out.println("se busca obtener los cupos");
+        Integer nroInscritos = horarioService.obtenerCupos(cod_asig,seccion);
+        System.out.println("se obtuvieron: " + nroInscritos);
+        return ResponseEntity.ok(nroInscritos);
+    }
+
     @GetMapping("/getHorarios/{cod_asig}/{seccion}")
     public ResponseEntity<Horario> getHorario(@PathVariable("cod_asig") Integer cod_asig,
                                                @PathVariable("seccion") String seccion){

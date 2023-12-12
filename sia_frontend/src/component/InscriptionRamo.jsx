@@ -6,6 +6,7 @@ import {useFetch} from "./useFetch";
 import Swal from 'sweetalert2';
 import ramoService from "../service/RamoService";
 import {Button, Modal} from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
 
 
 
@@ -26,11 +27,16 @@ export default function InscriptionRamo() {
     const handleCloseModal = () => setShowModal(false);
     const handleShowModal = () => setShowModal(true);
 
+    const navigate = useNavigate();
+    const recargar = () => {
+        navigate("/inscripcion-estudiante");
+    };
+
     const [input, setInput] = useState(initialState);
     const [cuposData, setCuposData] = useState([]);
     const [selectedPlan, setSelectedPlan] = useState(null);
     const [nroRamos, setNroRamos] = useState(null);
-    const [estadoTope, setEstadoTope] = useState(null);
+    const [senalCupos, setSenalCupos] = useState(false);
 
     useEffect(() => {
         // Obtener cupos para cada ramo y sección
@@ -40,29 +46,26 @@ export default function InscriptionRamo() {
             for (const ramo of ramosData) {
                 for (const seccion of ['A-1', 'B-2', 'C-3']) {
                     try {
+                        //console.log("cod_asig: " + ramo.cod_asig + "seccion: " + seccion)
                         const cuposResponse = await fetch(`http://localhost:8080/ramo/getCupos/${ramo.cod_asig}/${seccion}`);
                         const cuposData = await cuposResponse.json();
 
                         cuposArray.push({
                             cod_asig: ramo.cod_asig,
                             nivel: ramo.nivel,
-                            seccion,
+                            seccion: seccion,
                             cupos: cuposData,
                         });
+
                     } catch (error) {
                         console.error('Error fetching cupos', error);
                     }
                 }
             }
-
             setCuposData(cuposArray);
         };
 
-        if (selectedPlan) {
-            fetchData();
-        }
-
-        if (!ramosLoading) {
+        if (senalCupos) {
             fetchData();
         }
 
@@ -86,24 +89,6 @@ export default function InscriptionRamo() {
     }, []);
 
 
-    useEffect(() => {
-        const fetchEstadoTope = async () => {
-            if(input.seccion && input.cod_asig) {
-                try {
-                    const response = await fetch(`http://localhost:8080/horario/verTope/${input.cod_asig}/${input.seccion}`);
-                    const data = await response.json();
-                    setEstadoTope(data);
-                } catch (error) {
-                    console.error('Error al obtener estadoTope:', error);
-                    // Manejar el error según sea necesario
-                }
-            }
-        };
-
-        fetchEstadoTope();
-    }, []);
-
-
     const [horariosData, setHorariosData] = useState([]);
     const [textoHorario, setTextoHorario] = useState("");
 
@@ -118,7 +103,26 @@ export default function InscriptionRamo() {
         );
 
         setTextoHorario(horarioSeleccionado?.texto || "");
+        setSenalCupos(true);
     };
+
+    const obtenerCupos = async (event) => {
+        // obtener los ramos de una carrera
+        if (event.cod_asig) {
+            try {
+                const response = await fetch(`http://localhost:8080/horario/getAll`);
+                const horariosData = await response.json();
+                setHorariosData(horariosData);
+            } catch (error) {
+                console.error('Error fetching horarios', error);
+            }
+
+        } else {
+            // Limpiar la lista de ramos si no hay una carrera seleccionada
+            setHorariosData([]);
+        }
+    };
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -134,15 +138,6 @@ export default function InscriptionRamo() {
         fetchData();
     }, []);
 
-
-    const mostrarError = (campoFaltante) => {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: `Por favor, completa el campo ${campoFaltante}`,
-            className: 'mi-alerta-error', // Agrega una clase personalizada
-        });
-    };
 
     const handleInscribirRamo = (cod_asig, seccion, nom_asig) => {
         // console.log(`Inscribir ramo: ${cod_asig} - ${seccion} - ${nom_asig}`);
@@ -180,6 +175,7 @@ export default function InscriptionRamo() {
 
                 setShowModal(false);
 
+
             } else if (result.isDenied) {
 
                 Swal.fire({
@@ -191,10 +187,10 @@ export default function InscriptionRamo() {
                         Swal.showLoading()
                     },
                 });
+
+                recargar();
+
             }
-
-
-
         });
 
     };
@@ -211,7 +207,7 @@ export default function InscriptionRamo() {
         <div>
             <Navbar />
             <br></br>
-            {nroRamos < 7 && (
+            {nroRamos < 6 && (
                 <div className="split-container">
                     {/* Lado Izquierdo */}
                     <div className="leftSection">
@@ -284,7 +280,7 @@ export default function InscriptionRamo() {
                 </div>
 
             )}
-            {nroRamos > 6 && (
+            {nroRamos >= 6 && (
                 <h2> Has alcanzado el limite de asignaturas a la que puedes inscribir.
                 </h2>
 
@@ -306,7 +302,7 @@ export default function InscriptionRamo() {
                                 {['A-1', 'B-2', 'C-3'].map((seccion) => (
                                     <div key={seccion}>
                                         <div>{`Sección: ${seccion}`}</div>
-                                        <div>{`Cupos disponibles: ${cuposData.find((data) => data.seccion === seccion)?.cupos}`}</div>
+                                        <div>{`Cupos disponibles: 50`}</div>
                                         <div>{`Horario: ${getTextoHorario(input.cod_asig, seccion)}`}</div>
                                         <button onClick={() => handleInscribirRamo(input.cod_asig, seccion, input.nom_asig)}>
                                             Inscribir en esta sección

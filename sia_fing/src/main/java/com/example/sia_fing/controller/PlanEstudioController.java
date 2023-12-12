@@ -42,6 +42,17 @@ public class PlanEstudioController {
         return ResponseEntity.ok(p);
     }
 
+    // mostrar ramos por carrera elegida, el cod_carr es del estudiante principal
+    // esto para ingresar horario
+    @GetMapping("/getRamos/{cod_carr}")
+    public ResponseEntity<List<PlanEstudio>> obtenerRamosPorCarreraS(@PathVariable("cod_carr") Integer cod_carr){
+        List<PlanEstudio> pe = planEstudioService.obtenerRamosPorCarrera(cod_carr);
+        if(pe.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(pe);
+    }
+
 
 
     // mostrar ramos por carrera elegida, el cod_carr es del estudiante principal
@@ -76,14 +87,13 @@ public class PlanEstudioController {
     }
 
 
-
-
     // obtener cupos de un ramo por seccion
     @GetMapping("/getCupos/{cod_asig}/{seccion}")
     public ResponseEntity<Integer> cuposDisponibles(@PathVariable("cod_asig") Integer cod_asig,
                                                     @PathVariable("seccion") String seccion){
-
+        System.out.println("se busca obtener los cupos");
         Integer nroInscritos = 50 - notaService.nroInscritos(cod_asig, seccion );
+        System.out.println("se obtuvieron: " + nroInscritos);
         return ResponseEntity.ok(nroInscritos);
     }
 

@@ -1,0 +1,660 @@
+{
+  "id": "e83530d9-5966-42c2-9b9e-a40535498115",
+  "version": "2.0",
+  "name": "SIA-FING",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "e178554e-dfb9-4ba8-b0e2-da5b07431a12",
+    "name": "Inscribir Horario",
+    "commands": [{
+      "id": "4113c976-2b51-4b44-a3dc-5a6db4f4ea00",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bcf21c60-03c3-460f-b023-110692b89ec8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "561a9b3b-cf94-4ad7-9bc4-00420d5f0f8c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-eCstZk:nth-child(5) div",
+      "targets": [
+        ["css=.sc-eCstZk:nth-child(5) div", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/ul/li[5]/a/div", "xpath:idRelative"],
+        ["xpath=//li[5]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b097cba-d912-489f-bb71-482d8f3bace1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "abd7a32d-7ad5-4b10-bb6a-d71d61f9cdc5",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5696eef0-0448-4994-bdc4-48c9d79bc273",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d6e173d-3909-4974-b8d0-72dad80cdef2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-confirm",
+      "targets": [
+        ["css=.swal2-confirm", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebe71ca5-2a1d-4e34-b6fc-1da2e6f36417",
+      "comment": "",
+      "command": "click",
+      "target": "css=.selectCarrera-container > div:nth-child(1)",
+      "targets": [
+        ["css=.selectCarrera-container > div:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "30533bd4-7995-4c59-a16b-9a59ba0b6b98",
+      "comment": "",
+      "command": "click",
+      "target": "name=codigo_carr",
+      "targets": [
+        ["name=codigo_carr", "name"],
+        ["css=div:nth-child(1) > .agregar", "css:finder"],
+        ["xpath=//select[@name='codigo_carr']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a5d11a9-712a-4ba3-8d55-a9f03d09ca28",
+      "comment": "",
+      "command": "select",
+      "target": "name=codigo_carr",
+      "targets": [],
+      "value": "label=INGENIERÍA QUÍMICA"
+    }, {
+      "id": "4207ec6f-4bd8-47b2-bd4b-3f4cbe2f69b3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7d29036-e4b3-4316-bc8d-b60f93f4d81e",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "59e60520-dc30-4cc2-8da3-8e89639f99d1",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c6257182-1d36-4ae1-bc4a-2d489986ae34",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-confirm",
+      "targets": [
+        ["css=.swal2-confirm", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8180795-0835-4d31-bc39-e9033ebda8da",
+      "comment": "",
+      "command": "click",
+      "target": "name=cod_asig",
+      "targets": [
+        ["name=cod_asig", "name"],
+        ["css=.selectRamo-container > .agregar", "css:finder"],
+        ["xpath=//select[@name='cod_asig']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[2]/select", "xpath:idRelative"],
+        ["xpath=//div[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee2ed1e0-b9eb-4907-9135-b5e12a3a89af",
+      "comment": "",
+      "command": "select",
+      "target": "name=cod_asig",
+      "targets": [],
+      "value": "label=Nivel 7: Ingeniería de Materiales"
+    }, {
+      "id": "51d5b696-5f79-4370-903c-c315554fb95f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc655cb1-6ac1-4dde-b305-845cadb55c5d",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf1852e1-53e3-4267-b3d0-55754cbff510",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c68d102-1bba-453e-9e30-66ce71dda525",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-confirm",
+      "targets": [
+        ["css=.swal2-confirm", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f95361f2-e810-4689-8e4e-9634ae1dd5a9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.checkbox-list:nth-child(3) li:nth-child(6)",
+      "targets": [
+        ["css=.checkbox-list:nth-child(3) li:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/ul/li[6]", "xpath:idRelative"],
+        ["xpath=//div[2]/ul/li[6]", "xpath:position"],
+        ["xpath=//li[contains(.,'Sábado')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa8f4498-b7da-49bd-b30a-c8868924de60",
+      "comment": "",
+      "command": "click",
+      "target": "css=.checkbox-list:nth-child(3) li:nth-child(6) > .checkbox-label",
+      "targets": [
+        ["css=.checkbox-list:nth-child(3) li:nth-child(6) > .checkbox-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/ul/li[6]/label", "xpath:idRelative"],
+        ["xpath=//li[6]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Sábado')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "77101bd2-0978-4f44-a8c2-27735756ae07",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b549aa1a-558a-4eec-b525-268b9ab823c2",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2e6d0a6-7d74-443b-bc7a-57a6f8cffab9",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d84f1cd6-f3d6-40ff-9c0b-9655c91eae87",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-confirm",
+      "targets": [
+        ["css=.swal2-confirm", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea7b6a1e-0546-4c53-882d-0b3d4164d27f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.checkbox-list:nth-child(4) li:nth-child(1) > .checkbox-label",
+      "targets": [
+        ["css=.checkbox-list:nth-child(4) li:nth-child(1) > .checkbox-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[3]/ul/li/label", "xpath:idRelative"],
+        ["xpath=//div[3]/ul/li/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Modulo 1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1de80f3e-1515-4505-8332-12b1dd4a9570",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c18c2dcb-1a9a-4663-8772-cda05d32c913",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b89c8c0a-79b8-4375-adc0-77c0a3c815e9",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "21bef55c-4c70-4cf8-b643-9ef1c6268a45",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-confirm",
+      "targets": [
+        ["css=.swal2-confirm", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "69ac49e8-d95e-43be-8847-b0e7385ca773",
+      "comment": "",
+      "command": "click",
+      "target": "css=.checkbox-list:nth-child(5) li:nth-child(1) > .checkbox-label",
+      "targets": [
+        ["css=.checkbox-list:nth-child(5) li:nth-child(1) > .checkbox-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[4]/ul/li/label", "xpath:idRelative"],
+        ["xpath=//div[4]/ul/li/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Sección A-1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ecfa852a-298d-45d5-ba7e-2e3f90090a2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.checkbox-list:nth-child(5) li:nth-child(3) > .checkbox-label",
+      "targets": [
+        ["css=.checkbox-list:nth-child(5) li:nth-child(3) > .checkbox-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[4]/ul/li[3]/label", "xpath:idRelative"],
+        ["xpath=//div[4]/ul/li[3]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Sección C-3')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "676f5049-861d-4aa1-b89b-48e01a89b9f7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9a87a01-9561-490b-8d4e-a33755fb7831",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8806020e-32bc-432f-93cc-98377aa7abf9",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed812404-e59c-428f-9a3f-1095710cb5e4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-confirm",
+      "targets": [
+        ["css=.swal2-confirm", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Confirmar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f68e8e1d-fa69-4a9a-bf54-7db5d9cc7cb1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6af42d08-4d54-4d24-93cb-50abc47cfac7",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc791993-e22c-4e35-910c-fa807dab743f",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ingresar Horario')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c6e9c9ca-1808-4f2b-a7cc-06b9b84b9c9d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-deny",
+      "targets": [
+        ["css=.swal2-deny", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Cancelar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd8da16e-cf60-4efb-a3f2-9e121a879b36",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "b6ec1365-82e5-4f19-8e8f-21f4a51d1b4f",
+    "name": "Inscribir Asignatura",
+    "commands": [{
+      "id": "77ac3df6-54c4-4983-8056-9165a8c47cf2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4bd711cf-863e-4105-9a11-8cf7574c3f04",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "105b1f71-fd7d-489b-a546-f8d0c7579521",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-eCstZk:nth-child(4) div",
+      "targets": [
+        ["css=.sc-eCstZk:nth-child(4) div", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/ul/li[4]/a/div", "xpath:idRelative"],
+        ["xpath=//li[4]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1afc610-ab6b-4d69-861e-3e712d6f9924",
+      "comment": "",
+      "command": "click",
+      "target": "css=.leftSection .planInfo:nth-child(1) button",
+      "targets": [
+        ["css=.leftSection .planInfo:nth-child(1) button", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Mostrar Secciones')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "42f7ba38-3c5b-48fd-9f76-25595a70f60d",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.leftSection .planInfo:nth-child(1) button",
+      "targets": [
+        ["css=.leftSection .planInfo:nth-child(1) button", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Mostrar Secciones')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4108bd64-1879-46f1-be0c-e53c9f427c81",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.leftSection .planInfo:nth-child(1) button",
+      "targets": [
+        ["css=.leftSection .planInfo:nth-child(1) button", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Mostrar Secciones')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ec7ae5a-b90f-4a2e-a012-c5d9718095c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) > button",
+      "targets": [
+        ["css=div:nth-child(4) > button", "css:finder"],
+        ["xpath=//div[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "218156eb-3cbc-4065-973f-973497eda958",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=div:nth-child(4) > button",
+      "targets": [
+        ["css=div:nth-child(4) > button", "css:finder"],
+        ["xpath=//div[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa705584-0f29-4c2c-9956-e7c4426a9d5f",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=div:nth-child(4) > button",
+      "targets": [
+        ["css=div:nth-child(4) > button", "css:finder"],
+        ["xpath=//div[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "270296ed-0031-438a-8be7-2f3655ebea33",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-deny",
+      "targets": [
+        ["css=.swal2-deny", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Cancelar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61b94a9d-fa79-4652-b015-d1b9a13512d7",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) > button",
+      "targets": [
+        ["css=div:nth-child(4) > button", "css:finder"],
+        ["xpath=//div[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca53d29f-6e50-4c1a-a5ac-19756fe21262",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=div:nth-child(4) > button",
+      "targets": [
+        ["css=div:nth-child(4) > button", "css:finder"],
+        ["xpath=//div[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e8759ce-38b3-48e2-a629-16726612c6ac",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=div:nth-child(4) > button",
+      "targets": [
+        ["css=div:nth-child(4) > button", "css:finder"],
+        ["xpath=//div[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e89f8d7-b24e-420b-88df-c8080b667a34",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-confirm",
+      "targets": [
+        ["css=.swal2-confirm", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Confirmar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7ae3154-42a7-498a-99a0-6a9a95c625ea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-eCstZk:nth-child(3) div",
+      "targets": [
+        ["css=.sc-eCstZk:nth-child(3) div", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/ul/li[3]/a/div", "xpath:idRelative"],
+        ["xpath=//li[3]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "069f08d6-8311-4549-a130-fa842028e52c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e178554e-dfb9-4ba8-b0e2-da5b07431a12"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}

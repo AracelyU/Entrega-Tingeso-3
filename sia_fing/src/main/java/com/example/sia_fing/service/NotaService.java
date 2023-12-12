@@ -109,7 +109,7 @@ public class NotaService {
         return notaRepository.save(n);
     }
 
-    // contar cuantos alumnos de la sección, anio y semestre estan inscritos
+    // contar cuantos alumnos de la sección,
     public Integer nroInscritos(Integer cod_asig, String seccion){
         return notaRepository.nroInscritos(seccion, cod_asig);
     }
