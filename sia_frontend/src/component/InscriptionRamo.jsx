@@ -303,7 +303,7 @@ export default function InscriptionRamo() {
                                     <div key={seccion}>
                                         <div>{`Sección: ${seccion}`}</div>
                                         <div>{`Cupos disponibles: 50`}</div>
-                                        <div>{`Horario: ${getTextoHorario(input.cod_asig, seccion)}`}</div>
+                                        <div>{`Horario: ${getTextoHorario(input.cod_asig, seccion)} `}</div>
                                         <button onClick={() => handleInscribirRamo(input.cod_asig, seccion, input.nom_asig)}>
                                             Inscribir en esta sección
                                         </button>
